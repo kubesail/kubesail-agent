@@ -15,14 +15,12 @@ RUN adduser -S nodejs && \
   chown -R nodejs /app && \
   chown -R nodejs /home/nodejs
 
+USER nodejs
+
+RUN yarn install --production
+
 COPY bin ./bin
 COPY lib ./lib
-
-RUN chown -R nodejs /app/lib /app/bin && \
-  yarn install --production && \
-  chmod +x /app/bin/*
-
-USER nodejs
 
 COPY package.json ./
 

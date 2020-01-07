@@ -23,6 +23,7 @@ spec:
         - name: kubesail-gateway
           image: kubesail-gateway:latest
           imagePullPolicy: Never
+          command: ["/app/bin/kubesail-gateway"]
           ports:
             - name: metrics
               containerPort: 5000

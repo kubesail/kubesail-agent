@@ -23,6 +23,7 @@ spec:
         - name: kubesail-agent
           image: kubesail-agent:latest
           imagePullPolicy: Never
+          command: ["/app/bin/kubesail-agent"]
           ports:
             - name: metrics
               containerPort: 5000
