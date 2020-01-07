@@ -3,6 +3,8 @@
 
 const KsAgent = require('../lib/KsAgent')
 
-const ksAgent = new KsAgent()
+const ksAgent = new KsAgent({
+  kubeapiEndpoint: 'foo'
+})
 
 ksAgent.init()
