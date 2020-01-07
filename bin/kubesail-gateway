@@ -2,7 +2,7 @@
 // @flow
 
 require('../lib/shared/node')
-const KsAgent = require('../lib/agent/KsAgent')
+const KsAgent = require('../lib/agent/KsGateway')
 
 const ksAgent = new KsAgent({
   kubeapiEndpoint: 'foo'

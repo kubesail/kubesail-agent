@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubesail-gateway
+spec:
+  selector:
+    matchLabels:
+      app: kubesail-gateway
+  minReadySeconds: 1
+  strategy:
+    type: Recreate
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        prometheus.io/port: "5000"
+        prometheus.io/scrape: "true"
+      labels:
+        app: kubesail-gateway
+    spec:
+      terminationGracePeriodSeconds: 0
+      containers:
+        - name: kubesail-gateway
+          image: kubesail-gateway:latest
+          imagePullPolicy: Never
+          ports:
+            - name: metrics
+              containerPort: 5000
+          env:
+            - name: GET_HOSTS_FROM
+              value: dns
+            - name: LOG_LEVEL
+              value: debug
+          resources:
+            requests:
+              cpu: 50m
+              memory: 100Mi
+            limits:
+              cpu: "2"
+              memory: 1500Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubesail-gateway
+spec:
+  type: NodePort
+  ports:
+    - port: 5000
+      protocol: TCP
+      targetPort: metrics
+  selector:
+    app: kubesail-gateway

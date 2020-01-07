@@ -1,0 +1,23 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+    - image: kubesail-agent
+      context: .
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        infer:
+          - "bin/*"
+          - "lib/*"
+    - image: kubesail-gateway
+      context: .
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        infer:
+          - "bin/*"
+          - "lib/*"
+deploy:
+  kustomize:
+    path: "k8s/overlays/dev"

@@ -1,0 +1,5 @@
+bases:
+  - ../../agent
+  - ../../gateway
+resources:
+  - ./redis.yaml

@@ -12,13 +12,7 @@ node_modules
 .secret
 .circleci
 flow-typed
-inf/env
-inf/images
-inf/kube
-inf/packer
-inf/ansible
-inf/terraform
-inf/nginx.conf
+inf
 docker-compose.yml
 gulpfile.js
 .tern-project
@@ -26,8 +20,3 @@ gulpfile.js
 .vagrant
 Vagrantfile
 tmp
-build
-src/www
-src/public
-src/config
-src/scripts
