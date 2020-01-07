@@ -1,0 +1,4 @@
+* text=auto
+yarn.lock binary
+*.secret binary
+*.txt -crlf
