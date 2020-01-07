@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+// @flow
+
+const KsAgent = require('../lib/KsAgent')
+
+const ksAgent = new KsAgent()
+
+ksAgent.init()
