@@ -33,7 +33,6 @@ metadata:
   labels:
     app: redis
 spec:
-  type: NodePort
   ports:
     - port: 6379
       targetPort: 6379

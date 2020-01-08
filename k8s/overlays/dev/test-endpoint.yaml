@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qotm
+spec:
+  selector:
+    matchLabels:
+      app: qotm
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: qotm
+    spec:
+      containers:
+        - name: qotm
+          image: kubesail/qotm:2.0
+          resources:
+            requests:
+              cpu: 50m
+              memory: 100Mi
+            limits:
+              cpu: 2
+              memory: 1500Mi
+          ports:
+            - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: qotm
+  labels:
+    app: qotm
+spec:
+  ports:
+    - port: 8000
+      targetPort: 8000
+  selector:
+    app: qotm
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: qotm
+spec:
+  rules:
+    - host: test-qotm.example.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: qotm
+              servicePort: 8000

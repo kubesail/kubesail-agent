@@ -3,3 +3,4 @@ bases:
   - ../../gateway
 resources:
   - ./redis.yaml
+  - ./test-endpoint.yaml
