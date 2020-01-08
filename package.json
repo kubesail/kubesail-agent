@@ -31,8 +31,10 @@
     "prettier": "^1.19.1"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "ioredis": "^4.14.1",
     "kubernetes-client": "^8.3.6",
+    "prom-client": "^11.5.3",
     "serialize-error": "^5.0.0",
     "winston": "^3.2.1"
   }

@@ -27,6 +27,8 @@ spec:
           ports:
             - name: metrics
               containerPort: 5000
+            - name: gateway
+              containerPort: 4000
           env:
             - name: GET_HOSTS_FROM
               value: dns
@@ -47,7 +49,12 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 5000
+    - name: gateway
+      port: 4000
+      protocol: TCP
+      targetPort: gateway
+    - name: metrics
+      port: 5000
       protocol: TCP
       targetPort: metrics
   selector:

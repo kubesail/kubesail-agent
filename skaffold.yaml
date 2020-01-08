@@ -21,3 +21,16 @@ build:
 deploy:
   kustomize:
     path: "k8s/overlays/dev"
+portForward:
+  - resourceType: deployment
+    resourceName: agent
+    port: 5000
+    localPort: 5000
+  - resourceType: deployment
+    resourceName: gateway
+    port: 4000
+    localPort: 4000
+  - resourceType: deployment
+    resourceName: qotm
+    port: 8000
+    localPort: 8000
