@@ -21,7 +21,7 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
         - name: kubesail-gateway
-          image: kubesail-gateway:latest
+          image: kubesail/gateway:latest
           imagePullPolicy: Never
           command: ["/app/bin/kubesail-gateway"]
           ports:

@@ -2,7 +2,7 @@ apiVersion: skaffold/v1
 kind: Config
 build:
   artifacts:
-    - image: kubesail-agent
+    - image: kubesail/agent
       context: .
       docker:
         dockerfile: Dockerfile
@@ -10,7 +10,7 @@ build:
         infer:
           - "bin/*"
           - "lib/*"
-    - image: kubesail-gateway
+    - image: kubesail/gateway
       context: .
       docker:
         dockerfile: Dockerfile

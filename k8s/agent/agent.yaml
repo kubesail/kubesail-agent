@@ -21,7 +21,7 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
         - name: kubesail-agent
-          image: kubesail-agent:latest
+          image: kubesail/agent:latest
           imagePullPolicy: Never
           command: ["/app/bin/kubesail-agent"]
           ports:
