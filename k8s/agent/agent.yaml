@@ -28,7 +28,7 @@ spec:
             - name: metrics
               containerPort: 5000
             - name: http
-              containerPort: 8000
+              containerPort: 8080
             - name: https
               containerPort: 8443
           env:
@@ -52,7 +52,7 @@ spec:
   type: NodePort
   ports:
     - name: http
-      port: 8000
+      port: 8080
       protocol: TCP
       targetPort: http
     - name: https
