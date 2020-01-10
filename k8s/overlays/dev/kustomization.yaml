@@ -4,3 +4,6 @@ bases:
 resources:
   - ./redis.yaml
   - ./test-endpoint.yaml
+# patchesStrategicMerge:
+#   - ./patches/agent.yaml
+#   - ./patches/gateway.yaml

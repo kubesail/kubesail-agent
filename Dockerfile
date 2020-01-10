@@ -20,6 +20,7 @@ USER nodejs
 RUN yarn install --production
 
 COPY bin ./bin
+COPY test ./test
 COPY lib ./lib
 
 COPY package.json ./

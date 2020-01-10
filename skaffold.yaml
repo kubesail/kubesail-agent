@@ -18,6 +18,14 @@ build:
         infer:
           - "bin/*"
           - "lib/*"
+    - image: kubesail/test
+      context: .
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        infer:
+          - "bin/*"
+          - "lib/*"
 deploy:
   kustomize:
     path: "k8s/overlays/dev"
