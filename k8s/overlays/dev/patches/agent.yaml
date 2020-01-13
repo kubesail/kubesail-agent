@@ -6,19 +6,29 @@ spec:
   template:
     spec:
       containers:
-        - name: kubesail-agent-test
-          image: kubesail/test:latest
-          imagePullPolicy: Never
-          command: ["/app/bin/test-agent"]
+        # - name: kubesail-agent-test
+        #   image: kubesail/test:latest
+        #   imagePullPolicy: Never
+        #   command: ["/app/bin/test-agent"]
+        #   env:
+        #     - name: GET_HOSTS_FROM
+        #       value: dns
+        #     - name: LOG_LEVEL
+        #       value: debug
+        #     - name: NODE_ENV
+        #       value: development
+        #   resources:
+        #     requests:
+        #       cpu: 50m
+        #       memory: 100Mi
+        #     limits:
+        #       cpu: "2"
+        #       memory: 1500Mi
+        - name: kubesail-agent
           env:
             - name: GET_HOSTS_FROM
               value: dns
             - name: LOG_LEVEL
               value: debug
-          resources:
-            requests:
-              cpu: 50m
-              memory: 100Mi
-            limits:
-              cpu: "2"
-              memory: 1500Mi
+            - name: NODE_ENV
+              value: development
