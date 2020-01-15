@@ -4,8 +4,6 @@
 require('../lib/shared/node')
 const KsAgent = require('../lib/agent')
 
-const ksAgent = new KsAgent({
-  kubeapiEndpoint: 'foo'
-})
+const ksAgent = new KsAgent()
 
 ksAgent.init()

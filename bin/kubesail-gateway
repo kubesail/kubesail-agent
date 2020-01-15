@@ -4,8 +4,6 @@
 require('../lib/shared/node')
 const KsGateway = require('../lib/gateway')
 
-const ksGateway = new KsGateway({
-  kubeapiEndpoint: 'foo'
-})
+const ksGateway = new KsGateway()
 
 ksGateway.init()

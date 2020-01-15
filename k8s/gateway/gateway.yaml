@@ -40,6 +40,8 @@ spec:
               value: debug
             - name: LOGGING_LABEL
               value: kubesail-gateway
+            - name: NODE_ENV
+              value: development
           resources:
             requests:
               cpu: 50m
