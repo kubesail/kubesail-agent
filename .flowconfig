@@ -10,7 +10,7 @@
 .*/composer.json
 
 [include]
-./src/
+./lib/
 ./test/
 
 [options]

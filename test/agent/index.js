@@ -4,10 +4,9 @@
 const http = require('http')
 const { expect } = require('chai')
 
-const { AGENT_HTTP_LISTEN_PORT, AGENT_HTTPS_LISTEN_PORT } = require('../../lib/shared/config')
+const { AGENT_HTTP_LISTEN_PORT } = require('../../lib/shared/config')
 
 const httpReqOpts = { hostname: '127.0.0.1', port: AGENT_HTTP_LISTEN_PORT, method: 'GET' }
-const httpsReqOpts = { hostname: '127.0.0.1', port: AGENT_HTTPS_LISTEN_PORT, method: 'GET' }
 
 const describe = global.describe
 const it = global.it

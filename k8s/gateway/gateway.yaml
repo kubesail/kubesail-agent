@@ -27,13 +27,19 @@ spec:
           ports:
             - name: metrics
               containerPort: 5000
-            - name: gateway
-              containerPort: 4000
+            - name: gateway-agents
+              containerPort: 8000
+            - name: gateway-http
+              containerPort: 8080
+            - name: gateway-https
+              containerPort: 8443
           env:
             - name: GET_HOSTS_FROM
               value: dns
             - name: LOG_LEVEL
               value: debug
+            - name: LOGGING_LABEL
+              value: kubesail-gateway
           resources:
             requests:
               cpu: 50m
@@ -49,10 +55,18 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - name: gateway
-      port: 4000
+    - name: gateway-agents
+      port: 8000
       protocol: TCP
-      targetPort: gateway
+      targetPort: gateway-agents
+    - name: gateway-http
+      port: 8080
+      protocol: TCP
+      targetPort: gateway-http
+    - name: gateway-https
+      port: 8443
+      protocol: TCP
+      targetPort: gateway-https
     - name: metrics
       port: 5000
       protocol: TCP
