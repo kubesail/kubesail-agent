@@ -32,3 +32,5 @@ spec:
               value: debug
             - name: NODE_ENV
               value: development
+            - name: AGENT_API_TOKEN
+              value: TEST_AGENT_API_TOKEN
