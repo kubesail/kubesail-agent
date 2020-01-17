@@ -38,6 +38,22 @@ describe('Gateway tests', function() {
       })
       req.end()
     })
+
+    it('Returns a 200 when a good host is requested (qotm)', function(done) {
+      const req = http.request(
+        Object.assign({}, httpReqOpts, {
+          headers: { host: 'test-qotm.example.com' }
+        }),
+        res => {
+          expect(res.statusCode).to.equal(200)
+          done()
+        }
+      )
+      req.on('error', error => {
+        console.error(error)
+      })
+      req.end()
+    })
   })
 
   describe('HTTPS Tunnel handling', function() {
