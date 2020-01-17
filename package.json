@@ -34,6 +34,7 @@
     "kubernetes-client": "^8.3.6",
     "mocha": "^7.0.0",
     "prom-client": "^11.5.3",
+    "redis": "^2.8.0",
     "serialize-error": "^5.0.0",
     "sni": "^1.0.0",
     "socket.io": "^2.3.0",
