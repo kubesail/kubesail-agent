@@ -20,7 +20,7 @@ USER nodejs
 RUN yarn install --production
 
 COPY bin ./bin
-COPY secrets ./secrets
+COPY k8s/overlays/dev/secrets ./secrets
 COPY test ./test
 COPY lib ./lib
 

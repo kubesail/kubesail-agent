@@ -7,3 +7,9 @@ resources:
 patchesStrategicMerge:
   - ./patches/agent.yaml
   - ./patches/gateway.yaml
+secretGenerator:
+  - name: self-signed
+    files:
+      - tls.crt=secrets/tls.crt.pem
+      - tls.key=secrets/tls.key.pem
+    type: "kubernetes.io/tls"

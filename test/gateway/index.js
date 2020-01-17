@@ -1,11 +1,15 @@
 // @flow
 
-// $FlowIssue
+const fs = require('fs')
 const http = require('http')
 const https = require('https')
 const { expect } = require('chai')
 
-const { GATEWAY_HTTP_LISTEN_PORT, GATEWAY_HTTPS_LISTEN_PORT } = require('../../lib/shared/config')
+const {
+  GATEWAY_HTTP_LISTEN_PORT,
+  GATEWAY_HTTPS_LISTEN_PORT,
+  TLS_CERT_PATH
+} = require('../../lib/shared/config')
 
 const httpReqOpts = {
   hostname: '127.0.0.1',
@@ -50,14 +54,14 @@ describe('Gateway tests', function() {
       req.end()
     })
 
-    it('Returns a 200 when a good host is requested (qotm)', function(done) {
+    it('Returns a 200 when a good host is requested (qotm end-to-end)', function(done) {
       const req = http.request(
         Object.assign({}, httpReqOpts, {
           headers: { host: 'test-qotm.example.com' }
         }),
         res => {
-          expect(res.statusCode).to.equal(200)
           res.once('data', data => {
+            expect(res.statusCode).to.equal(200)
             const json = JSON.parse(data.toString())
             expect(json.ok).to.equal(true)
             done()
@@ -72,14 +76,33 @@ describe('Gateway tests', function() {
   })
 
   describe('HTTPS Tunnel handling', function() {
-    it('Returns a 503 when a bad host is requested', function(done) {
+    it('Drops the connection when given a bad host', function(done) {
       const req = https.request(
         Object.assign({}, httpsReqOpts, {
           headers: { host: 'foobar.com' }
+        })
+      )
+      req.on('error', error => {
+        expect(error.code).to.equal('ECONNRESET')
+        done()
+      })
+      req.end()
+    })
+
+    it('Returns a 200 when a good host is requested (qotm end-to-end)', function(done) {
+      const req = https.request(
+        Object.assign({}, httpsReqOpts, {
+          headers: { host: 'test-qotm.example.com' },
+          insecure: true,
+          rejectUnauthorized: false
         }),
         res => {
-          expect(res.statusCode).to.equal(503)
-          done()
+          res.once('data', data => {
+            const json = JSON.parse(data.toString())
+            expect(res.statusCode).to.equal(200)
+            expect(json.ok).to.equal(true)
+            done()
+          })
         }
       )
       req.on('error', error => {

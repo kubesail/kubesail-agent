@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // @flow
 
-require('../lib/shared/node')
+require('../lib/shared')
 const KsAgent = require('../lib/agent')
 
 const ksAgent = new KsAgent()

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // @flow
 
-require('../lib/shared/node')
+require('../lib/shared')
 const KsGateway = require('../lib/gateway')
 
 const ksGateway = new KsGateway()

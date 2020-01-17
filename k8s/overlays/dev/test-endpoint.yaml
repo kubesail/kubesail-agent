@@ -42,6 +42,9 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: qotm
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
     - host: test-qotm.example.com
@@ -51,3 +54,7 @@ spec:
             backend:
               serviceName: qotm
               servicePort: 8000
+  tls:
+    - hosts:
+        - test-qotm.example.com
+      secretName: self-signed
