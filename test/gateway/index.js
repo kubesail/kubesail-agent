@@ -1,15 +1,10 @@
 // @flow
 
-const fs = require('fs')
 const http = require('http')
 const https = require('https')
 const { expect } = require('chai')
 
-const {
-  GATEWAY_HTTP_LISTEN_PORT,
-  GATEWAY_HTTPS_LISTEN_PORT,
-  TLS_CERT_PATH
-} = require('../../lib/shared/config')
+const { GATEWAY_HTTP_LISTEN_PORT, GATEWAY_HTTPS_LISTEN_PORT } = require('../../lib/shared/config')
 
 const httpReqOpts = {
   hostname: '127.0.0.1',
