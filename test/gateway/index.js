@@ -57,7 +57,11 @@ describe('Gateway tests', function() {
         }),
         res => {
           expect(res.statusCode).to.equal(200)
-          done()
+          res.once('data', data => {
+            const json = JSON.parse(data.toString())
+            expect(json.ok).to.equal(true)
+            done()
+          })
         }
       )
       req.on('error', error => {
