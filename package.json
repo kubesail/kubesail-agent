@@ -31,6 +31,7 @@
   "dependencies": {
     "chai": "^4.2.0",
     "express": "^4.17.1",
+    "http-headers": "^3.0.2",
     "kubernetes-client": "^8.3.6",
     "mocha": "^7.0.0",
     "prom-client": "^11.5.3",
@@ -41,6 +42,7 @@
     "socket.io-client": "^2.3.0",
     "socket.io-redis": "^5.2.0",
     "socket.io-stream": "^0.9.1",
+    "validator": "^12.1.0",
     "winston": "^3.2.1"
   }
 }
