@@ -31,7 +31,6 @@
   "dependencies": {
     "chai": "^4.2.0",
     "express": "^4.17.1",
-    "http-headers": "^3.0.2",
     "kubernetes-client": "^8.3.6",
     "mocha": "^7.0.0",
     "prom-client": "^11.5.3",
