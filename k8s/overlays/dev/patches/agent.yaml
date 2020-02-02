@@ -34,3 +34,5 @@ spec:
               value: development
             - name: AGENT_API_TOKEN
               value: TEST_AGENT_API_TOKEN
+            - name: APP_ENV
+              value: dev

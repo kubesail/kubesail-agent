@@ -32,3 +32,5 @@ spec:
               value: debug
             - name: NODE_ENV
               value: development
+            - name: APP_ENV
+              value: dev
