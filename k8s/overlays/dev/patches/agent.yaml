@@ -33,8 +33,8 @@ spec:
             - name: NODE_ENV
               value: development
             - name: KUBESAIL_AGENT_KEY
-              value: KUBESAIL_AGENT_KEY
+              value: locallocallocallocallocallocallo
             - name: KUBESAIL_AGENT_SECRET
-              value: KUBESAIL_AGENT_SECRET
+              value: locallocallocallocallocallocallo
             - name: APP_ENV
               value: dev
