@@ -32,7 +32,9 @@ spec:
               value: debug
             - name: NODE_ENV
               value: development
-            - name: AGENT_API_TOKEN
-              value: TEST_AGENT_API_TOKEN
+            - name: KUBESAIL_AGENT_KEY
+              value: KUBESAIL_AGENT_KEY
+            - name: KUBESAIL_AGENT_SECRET
+              value: KUBESAIL_AGENT_SECRET
             - name: APP_ENV
               value: dev
