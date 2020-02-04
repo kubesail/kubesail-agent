@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euf -o pipefail
 
 TEST_TARGET="${1:-test-gateway}"
 

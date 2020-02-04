@@ -35,4 +35,4 @@ spec:
             - name: APP_ENV
               value: dev
             - name: KUBESAIL_API_TARGET
-              value: 192.168.1.6:4000
+              value: api
