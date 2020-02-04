@@ -96,7 +96,6 @@ describe('Gateway tests', function() {
             const json = JSON.parse(data.toString())
             expect(res.statusCode).to.equal(200)
             expect(json.ok).to.equal(true)
-            done()
           })
         }
       )

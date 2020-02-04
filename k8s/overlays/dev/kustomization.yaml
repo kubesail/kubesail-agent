@@ -2,6 +2,7 @@ bases:
   - ../../agent
   - ../../gateway
 resources:
+  - ./nginx-ingress.yaml
   - ./redis.yaml
   - ./test-endpoint.yaml
 patchesStrategicMerge:
