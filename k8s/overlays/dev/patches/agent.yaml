@@ -38,3 +38,6 @@ spec:
               value: locallocallocallocallocallocallo
             - name: APP_ENV
               value: dev
+          envFrom:
+            - secretRef:
+                name: agent

@@ -14,3 +14,6 @@ secretGenerator:
       - tls.crt=secrets/tls.crt.pem
       - tls.key=secrets/tls.key.pem
     type: "kubernetes.io/tls"
+  - name: agent
+    envs:
+      - secrets/env.plain
