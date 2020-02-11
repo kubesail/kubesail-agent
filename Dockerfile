@@ -7,11 +7,7 @@ ENV NODE_ENV="production"
 RUN apk update && \
   apk upgrade && \
   apk --no-cache add ca-certificates git bash python curl && \
-  update-ca-certificates && \
-  adduser -S nodejs && \
-  chown -R nodejs /app
-
-USER nodejs
+  update-ca-certificates
 
 COPY package.json yarn.lock .eslintrc.json .flowconfig ./
 
