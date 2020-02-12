@@ -25,6 +25,7 @@ spec:
         #       cpu: "2"
         #       memory: 1500Mi
         - name: kubesail-agent
+          command: ["./node_modules/.bin/nodemon", "/app/bin/kubesail-agent"]
           env:
             - name: GET_HOSTS_FROM
               value: dns

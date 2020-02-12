@@ -34,6 +34,7 @@
     "http-headers": "^3.0.2",
     "kubernetes-client": "^8.3.6",
     "mocha": "^7.0.0",
+    "nodemon": "^2.0.2",
     "prom-client": "^11.5.3",
     "redis": "^2.8.0",
     "serialize-error": "^5.0.0",
