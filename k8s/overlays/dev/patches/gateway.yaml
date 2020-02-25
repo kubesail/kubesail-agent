@@ -37,3 +37,10 @@ spec:
               value: dev
             - name: KUBESAIL_API_TARGET
               value: api
+          volumeMounts:
+            - name: self-signed
+              mountPath: /app/secrets
+      volumes:
+        - name: self-signed
+          secret:
+            secretName: self-signed

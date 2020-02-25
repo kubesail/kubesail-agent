@@ -42,3 +42,10 @@ spec:
           envFrom:
             - secretRef:
                 name: agent
+          volumeMounts:
+            - name: self-signed
+              mountPath: /app/secrets
+      volumes:
+        - name: self-signed
+          secret:
+            secretName: self-signed
