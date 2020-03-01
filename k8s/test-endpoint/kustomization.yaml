@@ -1,0 +1,2 @@
+resources:
+  - ./test-endpoint.yaml

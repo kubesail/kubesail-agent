@@ -20,6 +20,15 @@ build:
             strip: lib/
       docker:
         dockerfile: Dockerfile
+    - image: kubesail/test-endpoint
+      context: .
+      sync:
+        manual:
+          - src: lib/**/*
+            dest: /app/lib/
+            strip: lib/
+      docker:
+        dockerfile: Dockerfile
 deploy:
   kustomize:
     paths:

@@ -54,7 +54,7 @@ describe('Gateway tests', function() {
     it('Returns a 200 when a good host is requested (qotm end-to-end)', function(done) {
       const req = http.request(
         Object.assign({}, httpReqOpts, {
-          headers: { host: 'test-qotm.example.com' }
+          headers: { host: 'test-endpoint.example.com' }
         }),
         res => {
           res.once('data', data => {
@@ -94,7 +94,8 @@ describe('Gateway tests', function() {
     it('Returns a 200 when a good host is requested (qotm end-to-end)', function(done) {
       const req = https.request(
         Object.assign({}, httpsReqOpts, {
-          headers: { host: 'test-qotm.example.com' }
+          headers: { host: 'test-endpoint.example.com' },
+          path: '/qotm'
         }),
         res => {
           expect(res.statusCode).to.equal(200)
@@ -121,7 +122,8 @@ describe('Gateway tests', function() {
       for (let i = 0; i < NUM_REQUESTS; i++) {
         const req = https.request(
           Object.assign({}, httpsReqOpts, {
-            headers: { host: 'test-qotm.example.com' }
+            headers: { host: 'test-endpoint.example.com' },
+            path: '/qotm'
           }),
           res => {
             expect(res.statusCode).to.equal(200)

@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-endpoint
+spec:
+  selector:
+    matchLabels:
+      app: test-endpoint
+  minReadySeconds: 1
+  strategy:
+    type: Recreate
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: test-endpoint
+    spec:
+      terminationGracePeriodSeconds: 0
+      containers:
+        - name: test-endpoint
+          image: kubesail/test-endpoint:latest
+          imagePullPolicy: Never
+          command: ["./node_modules/.bin/nodemon", "lib/test-endpoint"]
+          ports:
+            - name: http
+              containerPort: 8000
+          env:
+            - name: GET_HOSTS_FROM
+              value: dns
+            - name: LOG_LEVEL
+              value: debug
+            - name: LOGGING_LABEL
+              value: test-endpoint
+            - name: NODE_ENV
+              value: development
+          resources:
+            requests:
+              cpu: 50m
+              memory: 100Mi
+            limits:
+              cpu: "2"
+              memory: 1500Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-endpoint
+  labels:
+    app: test-endpoint
+spec:
+  ports:
+    - port: 8000
+      targetPort: 8000
+  selector:
+    app: test-endpoint
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: test-endpoint
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+    - host: test-endpoint.example.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: test-endpoint
+              servicePort: 8000
+  tls:
+    - hosts:
+        - test-endpoint.example.com
+      secretName: self-signed
