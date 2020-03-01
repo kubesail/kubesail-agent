@@ -9,7 +9,7 @@ spec:
   minReadySeconds: 1
   strategy:
     type: Recreate
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       annotations:

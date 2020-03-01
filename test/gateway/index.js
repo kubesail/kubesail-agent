@@ -99,9 +99,9 @@ describe('Gateway tests', function() {
         res => {
           expect(res.statusCode).to.equal(200)
           res.on('data', data => {
-            console.log(data.toString())
+            expect(JSON.parse(data.toString()).quote).to.be.a('string')
+            done()
           })
-          done()
         }
       )
       req.on('error', error => {
