@@ -2,6 +2,7 @@ bases:
   - ../../agent
   - ../../gateway
 resources:
+  - ./nginx-service.yaml
   - ./nginx-ingress.yaml
   - ./redis.yaml
   - ./test-endpoint.yaml
