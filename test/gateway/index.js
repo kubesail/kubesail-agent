@@ -56,9 +56,11 @@ describe('Gateway tests', function() {
         }),
         res => {
           res.once('data', data => {
-            expect(res.statusCode).to.equal(200)
             const json = JSON.parse(data.toString())
             expect(json.ok).to.equal(true)
+          })
+          res.on('end', () => {
+            expect(res.statusCode).to.equal(200)
             done()
           })
         }
@@ -80,6 +82,28 @@ describe('Gateway tests', function() {
       req.on('error', error => {
         expect(error.code).to.equal('ECONNRESET')
         done()
+      })
+      req.end()
+    })
+
+    it('Returns a 200 when a good host is requested (qotm end-to-end)', function(done) {
+      const req = http.request(
+        Object.assign({}, httpsReqOpts, {
+          headers: { host: 'test-qotm.example.com' }
+        }),
+        res => {
+          res.once('data', data => {
+            const json = JSON.parse(data.toString())
+            expect(json.ok).to.equal(true)
+          })
+          res.on('end', () => {
+            expect(res.statusCode).to.equal(200)
+            done()
+          })
+        }
+      )
+      req.on('error', error => {
+        console.error(error)
       })
       req.end()
     })

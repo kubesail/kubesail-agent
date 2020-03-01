@@ -37,6 +37,8 @@ spec:
               value: dev
             - name: KUBESAIL_API_TARGET
               value: api
+            - name: ALWAYS_VALID_DOMAINS
+              value: test-qotm.example.com
           volumeMounts:
             - name: self-signed
               mountPath: /app/secrets
