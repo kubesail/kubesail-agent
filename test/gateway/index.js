@@ -109,5 +109,33 @@ describe('Gateway tests', function() {
       })
       req.end()
     })
+
+    it('Handles a lot of requests concurrently', function(done) {
+      const NUM_REQUESTS = 100
+      let count = 0
+      const loopDone = () => {
+        if (++count === NUM_REQUESTS) {
+          done()
+        }
+      }
+      for (let i = 0; i < NUM_REQUESTS; i++) {
+        const req = https.request(
+          Object.assign({}, httpsReqOpts, {
+            headers: { host: 'test-qotm.example.com' }
+          }),
+          res => {
+            expect(res.statusCode).to.equal(200)
+            res.on('data', data => {
+              expect(JSON.parse(data.toString()).quote).to.be.a('string')
+              loopDone()
+            })
+          }
+        )
+        req.on('error', error => {
+          console.error('Returns a 200 when a good host', error)
+        })
+        req.end()
+      }
+    })
   })
 })
