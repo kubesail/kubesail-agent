@@ -42,6 +42,10 @@ spec:
               value: kubesail-gateway
             - name: NODE_ENV
               value: development
+            - name: GATEWAY_INTERNAL_ADDRESS
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
           resources:
             requests:
               cpu: 50m

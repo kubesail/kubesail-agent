@@ -1,25 +1,35 @@
-apiVersion: skaffold/v1
+apiVersion: skaffold/v2alpha4
 kind: Config
 build:
   artifacts:
     - image: kubesail/agent
       context: .
-      docker:
-        dockerfile: Dockerfile
       sync:
         manual:
-          - src: "lib/**/*"
+          - src: lib/**/*
             dest: /app/lib/
-            strip: "lib/"
+            strip: lib/
+      docker:
+        dockerfile: Dockerfile
     - image: kubesail/gateway
       context: .
-      docker:
-        dockerfile: Dockerfile
       sync:
         manual:
-          - src: "lib/**/*"
+          - src: lib/**/*
             dest: /app/lib/
-            strip: "lib/"
+            strip: lib/
+      docker:
+        dockerfile: Dockerfile
+    - image: kubesail/test-endpoint
+      context: .
+      sync:
+        manual:
+          - src: lib/**/*
+            dest: /app/lib/
+            strip: lib/
+      docker:
+        dockerfile: Dockerfile
 deploy:
   kustomize:
-    path: "k8s/overlays/dev"
+    paths:
+      - k8s/overlays/dev

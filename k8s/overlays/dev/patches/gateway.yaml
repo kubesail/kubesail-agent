@@ -37,3 +37,12 @@ spec:
               value: dev
             - name: KUBESAIL_API_TARGET
               value: api
+            - name: ALWAYS_VALID_DOMAINS
+              value: test-endpoint.example.com
+          volumeMounts:
+            - name: self-signed
+              mountPath: /app/secrets
+      volumes:
+        - name: self-signed
+          secret:
+            secretName: self-signed
