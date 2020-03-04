@@ -38,7 +38,7 @@ spec:
     container('builder') {
       ansiColor('linux') {
         timeout(30) {
-          sh "docker build -t kubesail/agent:${env.BRANCH_NAME}"
+          sh "docker build -t kubesail/agent:${env.BRANCH_NAME} ."
         }
       }
     }
