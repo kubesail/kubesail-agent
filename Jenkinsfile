@@ -1,10 +1,6 @@
 def label = "jenkins-slave-${UUID.randomUUID().toString()}"
 def project = 'kubesail'
 
-environment {
-  DOCKER_HUB_CREDS = credentials('dockerhub')
-}
-
 podTemplate(label: label, yaml: """
 apiVersion: v1
 kind: Pod
@@ -42,8 +38,15 @@ spec:
     container('builder') {
       ansiColor('linux') {
         timeout(30) {
+          environment {
+            DOCKER_HUB_CREDS = credentials('dockerhub')
+          }
           sh "docker login --username ${DOCKER_HUB_CREDS_USR} --password ${DOCKER_HUB_CREDS_PSW}"
           sh "docker build -t kubesail/agent:${env.BRANCH_NAME} ."
+
+          if (env.BRANCH_NAME == 'master') {
+            sh "docker push kubesail/agent:${env.BRANCH_NAME}"
+          }
         }
       }
     }
