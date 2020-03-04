@@ -13,7 +13,7 @@ spec:
     kubernetes.io/hostname: ip-10-0-1-126
   containers:
   - name: builder
-    image: kubesail/jenkins-slave:v12
+    image: kubesail/jenkins-slave:v13
     imagePullPolicy: IfNotPresent
     command:
     - cat
