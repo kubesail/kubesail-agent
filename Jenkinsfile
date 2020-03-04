@@ -41,7 +41,7 @@ spec:
           environment {
             DOCKER_HUB_CREDS = credentials('dockerhub')
           }
-          sh "docker login --username ${DOCKER_HUB_CREDS_USR} --password ${DOCKER_HUB_CREDS_PSW}"
+          sh "docker login --username kubesailrobot --password $DOCKER_HUB_CREDS"
           sh "docker build -t kubesail/agent:${env.BRANCH_NAME} ."
 
           if (env.BRANCH_NAME == 'master') {
