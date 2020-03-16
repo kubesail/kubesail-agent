@@ -1,5 +1,5 @@
-// flow-typed signature: 4fd273c6fa7662f6c53d07ee32f528dd
-// flow-typed version: b84a3fc45f/winston_v3.x.x/flow_>=v0.104.x
+// flow-typed signature: 71d87edbd93b4e1027b7e590a8e97a21
+// flow-typed version: 097f6f2b81/winston_v3.x.x/flow_>=v0.104.x
 
 declare type $winstonLevels = { [string]: number, ... };
 
@@ -14,7 +14,7 @@ declare type $winstonNpmLogLevels = {
 };
 
 declare type $winstonInfo<T: $winstonLevels> = {
-  [optionName: string]: any,
+  [optionName: string]: mixed,
   level: $Keys<T>,
   message: string,
   ...
@@ -62,25 +62,36 @@ declare type $winstonLogger<T: $winstonLevels> = {
   close: () => $winstonLogger<T>,
   configure: ($winstonLoggerConfig<T>) => void,
   log: (message: $winstonInfo<T>) => $winstonLogger<T>,
+  startTimer: () => $winstonProfiler<T>,
+  profile: (name: string, info?: $Shape<$winstonInfo<T>>) => void,
   ...
 };
 
 declare type $winstonConfigSubModule = { npm: () => $winstonNpmLogLevels, ... };
-  
+
 declare type $winstonFormatJsonOptions = {
-  replacer?: (key: string, value: any) => any,
+  replacer?: (key: string, value: mixed) => mixed,
   space?: number,
   stable?: boolean,
   ...
 };
 
+declare type $winstonFormatPrettyPrintOptions = {|
+  depth?: number,
+  colorize?: boolean,
+|};
+
+declare type $winstonFormatErrorsOptions = {|
+  stack?: boolean,
+|};
+
 declare type $winstonFormatSubModule = {
-  ((info: Object) => Object): () => $winstonFormat,
+  <T: $winstonLevels>((info: $winstonInfo<T>) => $winstonInfo<T>): () => $winstonFormat,
   combine: (...args: Array<$winstonFormat>) => $winstonFormat,
   json: (options?: $winstonFormatJsonOptions) => $winstonFormat,
   label: (config?: Object) => $winstonFormat,
   metadata: () => $winstonFormat,
-  prettyPrint: () => $winstonFormat,
+  prettyPrint: (options?: $winstonFormatPrettyPrintOptions) => $winstonFormat,
   simple: () => $winstonFormat,
   splat: () => $winstonFormat,
   timestamp: (?{
@@ -91,6 +102,7 @@ declare type $winstonFormatSubModule = {
   colorize: () => $winstonFormat,
   logstash: () => $winstonFormat,
   printf: ((args: $winstonInfo<Object>) => string) => $winstonFormat,
+  errors: (options?: $winstonFormatErrorsOptions) => $winstonFormat,
   ...
 };
 
@@ -103,6 +115,12 @@ declare class $winstonContainer<T> {
   has(loggerId: string): boolean;
   close(loggerId?: string): void;
 }
+
+declare interface $winstonProfiler<T: $winstonNpmLogLevels> {
+  logger: $winstonLogger<T>;
+  start: Date;
+  done(info?: $Shape<$winstonInfo<T>>): void;
+};
 
 declare module "winston" {
   declare export type Levels = $winstonLevels;
@@ -120,6 +138,7 @@ declare module "winston" {
   declare export type FormatSubModule = $winstonFormatSubModule;
   declare export type DefaultLogger = $winstonDefaultLogger;
   declare export type Container<T: Levels> = $winstonContainer<T>;
+  declare export type Profiler<T: Levels> = $winstonProfiler<T>;
 
   declare module.exports: {
     ...$Exact<$winstonDefaultLogger>,
