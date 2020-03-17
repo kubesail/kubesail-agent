@@ -2,6 +2,7 @@
 
 const http = require('http')
 const https = require('https')
+// $FlowIssue
 const { expect } = require('chai')
 
 const { GATEWAY_HTTP_LISTEN_PORT, GATEWAY_HTTPS_LISTEN_PORT } = require('../../lib/shared/config')
