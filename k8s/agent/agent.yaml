@@ -22,7 +22,7 @@ spec:
       containers:
         - name: kubesail-agent
           image: kubesail/agent:latest
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           command: ['/app/bin/kubesail-agent']
           ports:
             - name: metrics

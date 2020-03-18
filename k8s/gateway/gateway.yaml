@@ -22,7 +22,7 @@ spec:
       containers:
         - name: kubesail-gateway
           image: kubesail/gateway:latest
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           command: ['/app/bin/kubesail-gateway']
           ports:
             - name: metrics
