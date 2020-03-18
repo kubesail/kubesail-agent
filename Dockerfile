@@ -9,12 +9,12 @@ RUN apk update && \
   apk --no-cache add ca-certificates git bash python curl && \
   update-ca-certificates
 
-COPY package.json yarn.lock .eslintrc.json .flowconfig ./
+COPY package.json yarn.lock .eslintrc.json ./
 
 RUN yarn install --production
 
 COPY bin ./bin
-COPY package.json k8s/overlays/dev/secret[s] ./secrets/
+COPY k8s/overlays/dev/secrets ./secrets/
 COPY test ./test
 COPY lib ./lib
 COPY package.json ./
