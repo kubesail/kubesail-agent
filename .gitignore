@@ -28,3 +28,5 @@ tmp
 /.env
 terraform.tfstate.*
 *.retry
+*.crt
+*.key
