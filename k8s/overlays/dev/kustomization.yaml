@@ -12,8 +12,8 @@ patchesStrategicMerge:
 secretGenerator:
   - name: self-signed
     files:
-      - tls.crt=secrets/tls.crt.pem
-      - tls.key=secrets/tls.key.pem
+      - tls.crt=secrets/tls.crt
+      - tls.key=secrets/tls.key
     type: "kubernetes.io/tls"
   - name: agent
     envs:

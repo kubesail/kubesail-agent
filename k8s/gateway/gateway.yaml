@@ -13,8 +13,8 @@ spec:
   template:
     metadata:
       annotations:
-        prometheus.io/port: "5000"
-        prometheus.io/scrape: "true"
+        prometheus.io/port: '5000'
+        prometheus.io/scrape: 'true'
       labels:
         app: kubesail-gateway
     spec:
@@ -22,8 +22,8 @@ spec:
       containers:
         - name: kubesail-gateway
           image: kubesail/gateway:latest
-          imagePullPolicy: Never
-          command: ["/app/bin/kubesail-gateway"]
+          imagePullPolicy: IfNotPresent
+          command: ['/app/bin/kubesail-gateway']
           ports:
             - name: metrics
               containerPort: 5000
@@ -51,7 +51,7 @@ spec:
               cpu: 50m
               memory: 100Mi
             limits:
-              cpu: "2"
+              cpu: '2'
               memory: 1500Mi
 ---
 apiVersion: v1
