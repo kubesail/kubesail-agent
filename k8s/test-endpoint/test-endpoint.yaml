@@ -19,8 +19,8 @@ spec:
       containers:
         - name: test-endpoint
           image: kubesail/test-endpoint:latest
-          imagePullPolicy: Never
-          command: ["./node_modules/.bin/nodemon", "lib/test-endpoint"]
+          imagePullPolicy: IfNotPresent
+          command: ['./node_modules/.bin/nodemon', 'lib/test-endpoint']
           ports:
             - name: http
               containerPort: 8000
@@ -38,7 +38,7 @@ spec:
               cpu: 50m
               memory: 100Mi
             limits:
-              cpu: "2"
+              cpu: '2'
               memory: 1500Mi
 ---
 apiVersion: v1
@@ -59,8 +59,8 @@ kind: Ingress
 metadata:
   name: test-endpoint
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/ssl-redirect: 'false'
+    ingress.kubernetes.io/ssl-redirect: 'false'
 spec:
   rules:
     - host: test-endpoint.example.com
