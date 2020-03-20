@@ -1,4 +1,4 @@
-apiVersion: skaffold/v2alpha4
+apiVersion: skaffold/v2beta1
 kind: Config
 build:
   artifacts:
@@ -7,8 +7,7 @@ build:
       sync:
         manual:
           - src: lib/**/*
-            dest: /app/lib/
-            strip: lib/
+            dest: .
       docker:
         dockerfile: Dockerfile
     - image: kubesail/gateway
@@ -16,8 +15,7 @@ build:
       sync:
         manual:
           - src: lib/**/*
-            dest: /app/lib/
-            strip: lib/
+            dest: .
       docker:
         dockerfile: Dockerfile
     - image: kubesail/test-endpoint
@@ -25,8 +23,7 @@ build:
       sync:
         manual:
           - src: lib/**/*
-            dest: /app/lib/
-            strip: lib/
+            dest: .
       docker:
         dockerfile: Dockerfile
 deploy:

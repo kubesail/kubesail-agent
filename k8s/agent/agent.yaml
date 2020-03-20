@@ -6,15 +6,15 @@ spec:
   selector:
     matchLabels:
       app: kubesail-agent
-  minReadySeconds: 1
+  minReadySeconds: 0
   strategy:
     type: Recreate
   replicas: 1
   template:
     metadata:
       annotations:
-        prometheus.io/port: '5000'
-        prometheus.io/scrape: 'true'
+        prometheus.io/port: "5000"
+        prometheus.io/scrape: "true"
       labels:
         app: kubesail-agent
     spec:
@@ -23,7 +23,7 @@ spec:
         - name: kubesail-agent
           image: kubesail/agent:latest
           imagePullPolicy: IfNotPresent
-          command: ['/app/bin/kubesail-agent']
+          command: ["/app/bin/kubesail-agent"]
           ports:
             - name: metrics
               containerPort: 5000
@@ -43,5 +43,5 @@ spec:
               cpu: 50m
               memory: 100Mi
             limits:
-              cpu: '2'
+              cpu: "2"
               memory: 1500Mi
