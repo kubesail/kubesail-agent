@@ -6,6 +6,7 @@ spec:
   selector:
     matchLabels:
       app: kubesail-agent
+      tier: service
   minReadySeconds: 0
   strategy:
     type: Recreate
@@ -17,6 +18,7 @@ spec:
         prometheus.io/scrape: "true"
       labels:
         app: kubesail-agent
+        tier: service
     spec:
       terminationGracePeriodSeconds: 0
       containers:
