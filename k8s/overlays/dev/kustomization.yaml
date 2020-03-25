@@ -6,6 +6,7 @@ resources:
   - ./nginx-service.yaml
   - ./nginx-ingress.yaml
   - ./redis.yaml
+  - ./services/metrics.yaml
 patchesStrategicMerge:
   - ./patches/agent.yaml
   - ./patches/gateway.yaml
