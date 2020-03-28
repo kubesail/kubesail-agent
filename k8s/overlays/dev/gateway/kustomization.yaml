@@ -1,21 +1,15 @@
 bases:
-  - ../../agent
-  - ../../gateway
-  - ../../test-endpoint
+  - ../../../gateway
 resources:
   - ./nginx-service.yaml
   - ./nginx-ingress.yaml
   - ./redis.yaml
   - ./services/metrics.yaml
 patchesStrategicMerge:
-  - ./patches/agent.yaml
-  - ./patches/gateway.yaml
+  - ./gateway.yaml
 secretGenerator:
   - name: self-signed
     files:
       - tls.crt=secrets/tls.crt
       - tls.key=secrets/tls.key
-    type: "kubernetes.io/tls"
-  - name: agent
-    envs:
-      - secrets/env.plain
+    type: 'kubernetes.io/tls'
