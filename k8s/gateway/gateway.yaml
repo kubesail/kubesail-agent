@@ -75,9 +75,5 @@ spec:
       port: 8443
       protocol: TCP
       targetPort: gateway-https
-    - name: metrics
-      port: 5000
-      protocol: TCP
-      targetPort: metrics
   selector:
     app: kubesail-gateway

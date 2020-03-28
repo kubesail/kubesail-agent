@@ -25,9 +25,9 @@ const it = global.it
 
 describe('Gateway tests', function() {
   describe('HTTP Tunnel handling', function() {
-    it('Returns a 400 when a no host header is provided', function(done) {
+    it('Returns a 502 when a no host header is provided', function(done) {
       const req = http.request(httpReqOpts, res => {
-        expect(res.statusCode).to.equal(400)
+        expect(res.statusCode).to.equal(502)
         done()
       })
       req.on('error', error => {
@@ -36,13 +36,13 @@ describe('Gateway tests', function() {
       req.end()
     })
 
-    it('Returns a 503 when a bad host is requested', function(done) {
+    it('Returns a 502 when a bad host is requested', function(done) {
       const req = http.request(
         Object.assign({}, httpReqOpts, {
           headers: { host: 'foobar.com' }
         }),
         res => {
-          expect(res.statusCode).to.equal(503)
+          expect(res.statusCode).to.equal(502)
           done()
         }
       )
