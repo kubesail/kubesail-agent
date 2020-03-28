@@ -1,2 +1,2 @@
 bases:
-  - ../../test-endpoint
+  - ../../../test-endpoint
