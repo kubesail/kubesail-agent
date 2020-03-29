@@ -25,9 +25,9 @@ const it = global.it
 
 describe('Gateway tests', function() {
   describe('HTTP Tunnel handling', function() {
-    it('Returns a 502 when a no host header is provided', function(done) {
+    it('Returns a 501 when a no host header is provided', function(done) {
       const req = http.request(httpReqOpts, res => {
-        expect(res.statusCode).to.equal(502)
+        expect(res.statusCode).to.equal(501)
         done()
       })
       req.on('error', error => {
