@@ -140,5 +140,22 @@ describe('Gateway tests', function() {
         req.end()
       }
     })
+
+    // it('Returns a 403 from the kube-api server', function(done) {
+    //   const req = https.request(
+    //     Object.assign({}, httpsReqOpts, {
+    //       headers: { host: 'mycluster.erulabs.kubesail-gateway.default.svc.cluster.local' },
+    //       path: '/openapi/v2'
+    //     }),
+    //     res => {
+    //       expect(res.statusCode).to.equal(403)
+    //       res.on('data', data => {
+    //         expect(JSON.parse(data.toString()).reason).to.equal('Forbidden')
+    //         done()
+    //       })
+    //     }
+    //   )
+    //   req.end()
+    // })
   })
 })
