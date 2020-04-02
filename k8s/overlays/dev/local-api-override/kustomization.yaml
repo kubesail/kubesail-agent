@@ -1,0 +1,6 @@
+bases:
+  - ../gateway
+  - ../agent
+patchesStrategicMerge:
+  - ../gateway/local-api-override.yaml
+  - ../agent/local-api-override.yaml
