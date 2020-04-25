@@ -8,7 +8,9 @@
   "prettier": {
     "semi": false,
     "singleQuote": true,
-    "printWidth": 100
+    "printWidth": 100,
+    "arrowParens": "avoid",
+    "trailingComma": "none"
   },
   "scripts": {
     "deploy": "docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t kubesail/agent:latest --push ."
