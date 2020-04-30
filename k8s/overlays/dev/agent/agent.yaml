@@ -17,15 +17,9 @@ spec:
         #       value: debug
         #     - name: NODE_ENV
         #       value: development
-        #   resources:
-        #     requests:
-        #       cpu: 50m
-        #       memory: 100Mi
-        #     limits:
-        #       cpu: "2"
-        #       memory: 1500Mi
         - name: kubesail-agent
           command: ["./node_modules/.bin/nodemon", "/app/bin/kubesail-agent"]
+          image: kubesail/agent
           env:
             - name: GET_HOSTS_FROM
               value: dns
@@ -47,6 +41,13 @@ spec:
           volumeMounts:
             - name: self-signed
               mountPath: /app/secrets
+          resources:
+            requests:
+              cpu: 50m
+              memory: 100Mi
+            limits:
+              cpu: "2"
+              memory: 1500Mi
       volumes:
         - name: self-signed
           secret:
