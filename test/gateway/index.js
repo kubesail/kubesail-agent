@@ -23,9 +23,9 @@ const httpsReqOpts = {
 const describe = global.describe
 const it = global.it
 
-describe('Gateway tests', function() {
-  describe('HTTP Tunnel handling', function() {
-    it('Returns a 501 when a no host header is provided', function(done) {
+describe('Gateway tests', function () {
+  describe('HTTP Tunnel handling', function () {
+    it('Returns a 501 when a no host header is provided', function (done) {
       const req = http.request(httpReqOpts, res => {
         expect(res.statusCode).to.equal(501)
         done()
@@ -36,7 +36,7 @@ describe('Gateway tests', function() {
       req.end()
     })
 
-    it('Returns a 502 when a bad host is requested', function(done) {
+    it('Returns a 502 when a bad host is requested', function (done) {
       const req = http.request(
         Object.assign({}, httpReqOpts, {
           headers: { host: 'foobar.com' }
@@ -52,7 +52,7 @@ describe('Gateway tests', function() {
       req.end()
     })
 
-    it('Returns a 200 when a good host is requested (qotm end-to-end)', function(done) {
+    it('Returns a 200 when a good host is requested (qotm end-to-end)', function (done) {
       const req = http.request(
         Object.assign({}, httpReqOpts, {
           headers: { host: 'test-endpoint.example.com' }
@@ -75,8 +75,8 @@ describe('Gateway tests', function() {
     })
   })
 
-  describe('HTTPS Tunnel handling', function() {
-    it('Drops the connection when given a bad host', function(done) {
+  describe('HTTPS Tunnel handling', function () {
+    it('Drops the connection when given a bad host', function (done) {
       const req = https.request(
         Object.assign({}, httpsReqOpts, {
           headers: { host: 'foobar.com' }
@@ -92,7 +92,7 @@ describe('Gateway tests', function() {
       req.end()
     })
 
-    it('Returns a 200 when a good host is requested (qotm end-to-end)', function(done) {
+    it('Returns a 200 when a good host is requested (qotm end-to-end)', function (done) {
       const req = https.request(
         Object.assign({}, httpsReqOpts, {
           headers: { host: 'test-endpoint.example.com' },
@@ -112,7 +112,7 @@ describe('Gateway tests', function() {
       req.end()
     })
 
-    it('Handles a lot of requests concurrently', function(done) {
+    it('Handles a lot of requests concurrently', function (done) {
       const NUM_REQUESTS = 100
       let count = 0
       const loopDone = () => {
