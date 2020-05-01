@@ -8,6 +8,8 @@ build:
         manual:
           - src: lib/**/*
             dest: .
+          - src: test/**/*
+            dest: .
       docker:
         dockerfile: Dockerfile
     - image: kubesail/gateway
@@ -16,6 +18,8 @@ build:
         manual:
           - src: lib/**/*
             dest: .
+          - src: test/**/*
+            dest: .
       docker:
         dockerfile: Dockerfile
     - image: kubesail/test-endpoint
@@ -23,6 +27,8 @@ build:
       sync:
         manual:
           - src: lib/**/*
+            dest: .
+          - src: test/**/*
             dest: .
       docker:
         dockerfile: Dockerfile
