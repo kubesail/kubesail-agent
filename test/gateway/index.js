@@ -8,12 +8,12 @@ const { expect } = require('chai')
 const { GATEWAY_HTTP_LISTEN_PORT, GATEWAY_HTTPS_LISTEN_PORT } = require('../../lib/shared/config')
 
 const httpReqOpts = {
-  hostname: '127.0.0.1',
+  hostname: 'kubesail-gateway',
   port: GATEWAY_HTTP_LISTEN_PORT,
   method: 'GET'
 }
 const httpsReqOpts = {
-  hostname: '127.0.0.1',
+  hostname: 'kubesail-gateway',
   port: GATEWAY_HTTPS_LISTEN_PORT,
   method: 'GET',
   insecure: true,
