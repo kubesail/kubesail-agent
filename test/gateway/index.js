@@ -52,7 +52,7 @@ describe('Gateway tests', function () {
       req.end()
     })
 
-    it('Returns a 200 when a good host is requested (qotm end-to-end)', function (done) {
+    it('Returns a 200 when a good host is requested (test-endpoint.example.com)', function (done) {
       const req = http.request(
         Object.assign({}, httpReqOpts, {
           headers: { host: 'test-endpoint.example.com' }
