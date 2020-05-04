@@ -49,7 +49,6 @@
     "sni": "^1.0.0",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0",
-    "socket.io-redis": "^5.2.0",
     "socket.io-stream": "^0.9.1",
     "validator": "^13.0.0",
     "winston": "^3.2.1"
