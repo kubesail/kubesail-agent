@@ -18,7 +18,7 @@ spec:
         #     - name: NODE_ENV
         #       value: development
         - name: kubesail-gateway
-          command: ["./node_modules/.bin/nodemon", "/app/bin/kubesail-gateway"]
+          command: ["./node_modules/.bin/nodemon", "/app/lib/gateway"]
           image: kubesail/gateway
           env:
             - name: GET_HOSTS_FROM
