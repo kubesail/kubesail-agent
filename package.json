@@ -1,6 +1,6 @@
 {
   "name": "kubesail-agent",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Allows a cluster or namespace to be managed by KubeSail.com",
   "repository": "git@github.com:kubesail/kubesail-agent",
   "author": "Seandon Mooy <seandon@kubesail.com>",
