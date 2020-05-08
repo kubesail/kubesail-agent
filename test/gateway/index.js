@@ -112,6 +112,23 @@ describe('Gateway tests', function () {
       req.end()
     })
 
+    it('Routes to the Kube API when using the clusterAddress', function (done) {
+      const req = https.request(
+        Object.assign({}, httpsReqOpts, {
+          headers: { host: 'test.erulabs.kubesail-gateway.default.svc.cluster.local' },
+          path: '/'
+        }),
+        res => {
+          expect(res.statusCode).to.equal(403)
+          done()
+        }
+      )
+      req.on('error', error => {
+        console.error('Routes to the Kube API when using the clusterAddress', error)
+      })
+      req.end()
+    })
+
     it('Handles a lot of requests concurrently', function (done) {
       const NUM_REQUESTS = 100
       let count = 0
