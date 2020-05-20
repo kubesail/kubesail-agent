@@ -20,16 +20,11 @@ spec:
         app: kubesail-gateway
         tier: service
     spec:
-      terminationGracePeriodSeconds: 5
       containers:
         - name: kubesail-gateway
           image: kubesail/gateway:latest
           imagePullPolicy: IfNotPresent
           command: ["node", "/app/lib/gateway"]
-          lifecycle:
-            preStop:
-              exec:
-                command: ["sleep", "5"]
           ports:
             - name: metrics
               containerPort: 5000
@@ -59,20 +54,6 @@ spec:
             limits:
               cpu: "2"
               memory: 1500Mi
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: gateway-agents
-              scheme: HTTPS
-            initialDelaySeconds: 5
-            periodSeconds: 10
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: gateway-agents
-              scheme: HTTPS
-            initialDelaySeconds: 5
-            periodSeconds: 10
 ---
 apiVersion: v1
 kind: Service
