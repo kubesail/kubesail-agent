@@ -23,7 +23,7 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
         - name: kubesail-agent
-          image: kubesail/agent:latest
+          image: 241057658291.dkr.ecr.us-west-2.amazonaws.com/kubesail-agent
           imagePullPolicy: IfNotPresent
           command: ["/app/bin/kubesail-agent"]
           ports:
