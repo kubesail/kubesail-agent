@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: kubesail-gateway
-          image: 241057658291.dkr.ecr.us-west-2.amazonaws.com/kubesail-agent
+          image: kubesail/agent
           imagePullPolicy: IfNotPresent
           command: ["node", "/app/lib/gateway"]
           ports:

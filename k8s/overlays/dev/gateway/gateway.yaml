@@ -19,7 +19,7 @@ spec:
         #       value: development
         - name: kubesail-gateway
           command: ["./node_modules/.bin/nodemon", "/app/lib/gateway"]
-          image: kubesail/gateway
+          image: kubesail/agent
           env:
             - name: GET_HOSTS_FROM
               value: dns

@@ -18,7 +18,7 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
         - name: test-endpoint
-          image: 241057658291.dkr.ecr.us-west-2.amazonaws.com/kubesail-agent
+          image: kubesail/agent
           imagePullPolicy: IfNotPresent
           command: ['./node_modules/.bin/nodemon', 'lib/test-endpoint']
           ports:

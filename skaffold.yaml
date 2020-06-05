@@ -12,16 +12,6 @@ build:
             dest: .
       docker:
         dockerfile: Dockerfile
-    - image: kubesail/gateway
-      context: .
-      sync:
-        manual:
-          - src: lib/**/*
-            dest: .
-          - src: test/**/*
-            dest: .
-      docker:
-        dockerfile: Dockerfile
     - image: kubesail/test-endpoint
       context: .
       sync:
