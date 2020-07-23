@@ -46,6 +46,7 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.3",
     "prom-client": "^12.0.0",
+    "semver": "^7.3.2",
     "serialize-error": "^6.0.0",
     "sni": "^1.0.0",
     "socket.io": "^2.3.0",
