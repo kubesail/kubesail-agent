@@ -17,6 +17,6 @@ COPY bin ./bin
 COPY k8s/overlays/dev/secrets ./secrets/
 COPY test ./test
 COPY lib ./lib
-COPY package.json ./
+COPY VERSION.txt package.json ./
 
 CMD ["/app/bin/kubesail-agent"]
