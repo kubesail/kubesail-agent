@@ -6,7 +6,7 @@ Allows a cluster or namespace to be managed on KubeSail.com
 
 ## Installation
 
-`kubectl apply -f https://byoc.kubesail.com/YOUR_KUBESAIL_USERNAME.yaml`
+https://kubesail.com -> Clusters -> Add Cluster -> "Full" Install
 
 ## Configuration
 
