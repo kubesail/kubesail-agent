@@ -2,5 +2,4 @@
 
 TAG="kubesail/agent:v$(cat VERSION.txt)"
 
-docker build -t ${TAG} .
-docker push ${TAG}
+docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t ${TAG}  --push .
