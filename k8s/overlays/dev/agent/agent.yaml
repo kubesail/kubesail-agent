@@ -24,6 +24,8 @@ spec:
               value: locallocallocallocallocallocallo
             - name: APP_ENV
               value: dev
+            - name: KUBESAIL_AGENT_INITIAL_ID
+              value: "a dev cluster"
           envFrom:
             - secretRef:
                 name: agent
