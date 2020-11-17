@@ -22,7 +22,7 @@ spec:
     spec:
       terminationGracePeriodSeconds: 0
       containers:
-        - name: kubesail-agent
+        - name: agent
           image: kubesail/agent
           imagePullPolicy: IfNotPresent
           command: ["/app/bin/kubesail-agent"]
