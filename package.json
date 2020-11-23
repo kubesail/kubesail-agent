@@ -13,7 +13,7 @@
     "trailingComma": "none"
   },
   "scripts": {
-    "deploy": "docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t kubesail/agent:latest --push ."
+    "deploy": "./bin/build.sh"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -28,11 +28,13 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-standard": "^4.0.1",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "mocha": "^7.1.2",
+    "nodemon": "^2.0.3",
+    "chai": "^4.2.0"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
-    "chai": "^4.2.0",
     "cidr-matcher": "^2.1.1",
     "connect-timeout": "^1.9.0",
     "express": "^4.17.1",
@@ -42,9 +44,7 @@
     "kubernetes-client": "^9.0.0",
     "lodash": "^4.17.15",
     "lru-cache": "^5.1.1",
-    "mocha": "^7.1.2",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.3",
     "prom-client": "^12.0.0",
     "serialize-error": "^6.0.0",
     "sni": "^1.0.0",
