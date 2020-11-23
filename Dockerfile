@@ -1,13 +1,11 @@
-FROM node:12-alpine
+FROM node:14-slim
 
 WORKDIR /app
 
 ENV NODE_ENV="production"
 
-RUN apk update && \
-  apk upgrade && \
-  apk --no-cache add ca-certificates git bash python curl && \
-  update-ca-certificates
+RUN apt-get update -yqq && \
+  apt-get install -yqq git bash python curl
 
 COPY package.json yarn.lock .eslintrc.json ./
 
