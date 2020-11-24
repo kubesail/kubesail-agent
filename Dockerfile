@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM node:14-slim as build
+FROM node:14-slim as build
 
 WORKDIR /app
 
@@ -18,7 +18,7 @@ COPY lib ./lib
 COPY VERSION.txt package.json ./
 
 
-FROM --platform=$BUILDPLATFORM node:14-slim as production
+FROM node:14-slim as production
 WORKDIR /app
 ENV NODE_ENV="production"
 COPY --from=build --chown=node:node /app .
