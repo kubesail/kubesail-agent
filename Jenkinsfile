@@ -46,7 +46,7 @@ spec:
               sh "docker login --username $DOCKER_HUB_CREDS_USER --password $DOCKER_HUB_CREDS_PASS"
           }
 
-          sh "docker build -t kubesail/agent:${env.BRANCH_NAME} ."
+          sh "docker build --target=production -t kubesail/agent:${env.BRANCH_NAME} ."
 
           if (env.BRANCH_NAME == 'master') {
             sh "docker push kubesail/agent:${env.BRANCH_NAME}"
