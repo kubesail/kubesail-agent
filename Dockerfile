@@ -29,5 +29,5 @@ COPY VERSION.txt package.json ./
 FROM node:14-slim as production
 WORKDIR /home/node/app
 ENV NODE_ENV="production"
-COPY --from=build --chown=node:node /app .
+COPY --from=build --chown=node:node /home/node/app .
 CMD ["/home/node/app/bin/node.sh", "/home/node/app/bin/kubesail-agent"]
