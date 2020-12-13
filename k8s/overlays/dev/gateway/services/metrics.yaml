@@ -9,6 +9,10 @@ spec:
       port: 5000
       protocol: TCP
       targetPort: metrics
+    - name: inspector
+      port: 9229
+      protocol: TCP
+      targetPort: inspector
   selector:
     app: kubesail-gateway
 ---
@@ -22,5 +26,9 @@ spec:
       port: 5000
       protocol: TCP
       targetPort: metrics
+    - name: inspector
+      port: 9229
+      protocol: TCP
+      targetPort: inspector
   selector:
     app: kubesail-agent

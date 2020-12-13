@@ -7,8 +7,12 @@ spec:
     spec:
       containers:
         - name: agent
-          command: ["./node_modules/.bin/nodemon", "/app/bin/kubesail-agent"]
+          command:
+            ["/home/node/app/bin/node.sh", "/home/node/app/bin/kubesail-agent"]
           image: kubesail/agent
+          ports:
+            - name: inspector
+              containerPort: 9229
           env:
             - name: GET_HOSTS_FROM
               value: dns

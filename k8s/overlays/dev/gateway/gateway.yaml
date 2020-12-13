@@ -18,8 +18,11 @@ spec:
         #     - name: NODE_ENV
         #       value: development
         - name: kubesail-gateway
-          command: ["./node_modules/.bin/nodemon", "/app/lib/gateway"]
+          command: ["/home/node/app/bin/node.sh", "/home/node/app/lib/gateway"]
           image: kubesail/agent
+          ports:
+            - name: inspector
+              containerPort: 9229
           env:
             - name: GET_HOSTS_FROM
               value: dns

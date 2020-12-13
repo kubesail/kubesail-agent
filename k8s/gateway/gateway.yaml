@@ -24,7 +24,7 @@ spec:
         - name: kubesail-gateway
           image: kubesail/agent
           imagePullPolicy: IfNotPresent
-          command: ["node", "/app/lib/gateway"]
+          command: ["/home/node/app/bin/node.sh", "/home/node/app/lib/gateway"]
           ports:
             - name: metrics
               containerPort: 5000
