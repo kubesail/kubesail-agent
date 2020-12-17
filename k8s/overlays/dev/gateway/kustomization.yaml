@@ -1,7 +1,6 @@
 bases:
   - ../../../gateway
 resources:
-  - ./nginx-service.yaml
   - ./nginx-ingress.yaml
   - ./redis.yaml
   - ./services/metrics.yaml
