@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: master
-          image: redis:5-alpine
-          imagePullPolicy: Always
+          image: redis:6.0
+          imagePullPolicy: IfNotPresent
           resources:
             requests:
               cpu: 50m
