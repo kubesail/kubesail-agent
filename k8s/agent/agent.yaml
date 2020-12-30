@@ -41,6 +41,10 @@ spec:
               value: kubesail-agent
             - name: NODE_ENV
               value: development
+            - name: NODE_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
           resources:
             requests:
               cpu: 50m
