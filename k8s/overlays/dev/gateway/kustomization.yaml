@@ -1,7 +1,7 @@
 bases:
   - ../../../gateway
 resources:
-  # - ./nginx-ingress.yaml
+  - ./nginx-ingress.yaml
   - ./redis.yaml
   - ./services/metrics.yaml
 patchesStrategicMerge:
