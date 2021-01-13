@@ -25,8 +25,7 @@ spec:
         - name: agent
           image: kubesail/agent
           imagePullPolicy: IfNotPresent
-          command:
-            ["/home/node/app/bin/node.sh", "/home/node/app/bin/kubesail-agent"]
+          command: ["/home/node/app/bin/node.sh", "agent"]
           ports:
             - name: metrics
               containerPort: 5000

@@ -7,8 +7,7 @@ spec:
     spec:
       containers:
         - name: agent
-          command:
-            ["/home/node/app/bin/node.sh", "/home/node/app/bin/kubesail-agent"]
+          command: ["/home/node/app/bin/node.sh", "agent"]
           image: kubesail/agent
           ports:
             - name: inspector

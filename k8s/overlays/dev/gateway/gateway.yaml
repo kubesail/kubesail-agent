@@ -5,6 +5,7 @@ metadata:
 spec:
   template:
     spec:
+      terminationGracePeriodSeconds: 0
       containers:
         # - name: kubesail-gateway-test
         #   image: kubesail/test:latest
@@ -18,8 +19,9 @@ spec:
         #     - name: NODE_ENV
         #       value: development
         - name: kubesail-gateway
-          command: ["/home/node/app/bin/node.sh", "/home/node/app/lib/gateway"]
+          command: ["/home/node/app/bin/node.sh", "gateway"]
           image: kubesail/agent
+          imagePullPolicy: IfNotPresent
           ports:
             - name: inspector
               containerPort: 9229
