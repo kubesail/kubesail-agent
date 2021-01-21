@@ -48,7 +48,7 @@
     "prom-client": "^12.0.0",
     "serialize-error": "^7.0.1",
     "sni": "^1.0.0",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.4.0",
     "socket.io-client": "^2.3.1",
     "socket.io-stream": "^0.9.1",
     "validator": "^13.5.2",
