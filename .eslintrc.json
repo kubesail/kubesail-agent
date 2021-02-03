@@ -26,6 +26,8 @@
     "require-await": 0,
     // "quotes": ["error", "single"],
     "no-return-await": 0,
+    "no-unreachable": ["warn"],
+    "no-use-before-define": "error",
     "no-unused-vars": [
       1,
       {
