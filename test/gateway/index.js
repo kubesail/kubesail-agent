@@ -115,7 +115,7 @@ describe('Gateway tests', function () {
     it('Routes to the Kube API when using the clusterAddress', function (done) {
       const req = https.request(
         Object.assign({}, httpsReqOpts, {
-          headers: { host: 'test.erulabs.kubesail-gateway.default.svc.cluster.local' },
+          headers: { host: 'a-dev-cluster.erulabs.kubesail-gateway.default.svc.cluster.local' },
           path: '/'
         }),
         res => {
