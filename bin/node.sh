@@ -10,7 +10,7 @@ fi
 
 shift
 
-if [[ $NODE_ENV == "development" ]]; then
+if [[ $NODE_ENV == "development" && -f ./node_modules/.bin/nodemon ]]; then
   echo "Starting in DEVELOPMENT mode"
   ./node_modules/.bin/nodemon \
     --watch lib/shared \
