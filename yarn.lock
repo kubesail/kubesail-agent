@@ -2531,10 +2531,9 @@ keyv@^3.0.0:
   dependencies:
     json-buffer "3.0.0"
 
-kubernetes-client@^9.0.0:
+kubernetes-client@kubesail/kubernetes-client#c8d5e563604386e42c85b09c015844adbf787088:
   version "9.0.0"
-  resolved "https://registry.yarnpkg.com/kubernetes-client/-/kubernetes-client-9.0.0.tgz#f72e6c71aaa20548b3d6466f1dc88dfa61fb3ba4"
-  integrity sha512-Qy8o42dZVHB9P+cIiKdWpQbz/65l/qW1fDYvlzzeSLftmL1Ne3HEiM+0TmKAwNuRW0pTJN2tRWhcccToclxJ8g==
+  resolved "https://codeload.github.com/kubesail/kubernetes-client/tar.gz/c8d5e563604386e42c85b09c015844adbf787088"
   dependencies:
     "@kubernetes/client-node" "0.10.2"
     camelcase "^6.0.0"
