@@ -2531,9 +2531,9 @@ keyv@^3.0.0:
   dependencies:
     json-buffer "3.0.0"
 
-kubernetes-client@kubesail/kubernetes-client#c8d5e563604386e42c85b09c015844adbf787088:
+kubernetes-client@kubesail/kubernetes-client#552b1e23474164c9111ec0e7bb8c8c5a04ce15af:
   version "9.0.0"
-  resolved "https://codeload.github.com/kubesail/kubernetes-client/tar.gz/c8d5e563604386e42c85b09c015844adbf787088"
+  resolved "https://codeload.github.com/kubesail/kubernetes-client/tar.gz/552b1e23474164c9111ec0e7bb8c8c5a04ce15af"
   dependencies:
     "@kubernetes/client-node" "0.10.2"
     camelcase "^6.0.0"
