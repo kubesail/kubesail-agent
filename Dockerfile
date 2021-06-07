@@ -1,4 +1,4 @@
-FROM node:16-slim as base
+FROM node:16-buster-slim as base
 WORKDIR /home/node/app
 ENV NODE_ENV="production"
 RUN apt-get update -yqq && \
@@ -26,7 +26,7 @@ COPY test ./test
 COPY lib ./lib
 COPY VERSION.txt package.json ./
 
-FROM node:16-slim as production
+FROM node:16-buster-slim as production
 WORKDIR /home/node/app
 ENV NODE_ENV="production"
 COPY --from=build --chown=node:node /home/node/app .
