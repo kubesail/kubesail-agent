@@ -16,31 +16,31 @@
     "deploy": "./bin/build.sh"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.15",
+    "@babel/core": "^7.14.3",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
     "chai": "^4.3.4",
-    "eslint": "^7.24.0",
+    "eslint": "^7.27.0",
     "eslint-config-prettier": "^7.2.0",
-    "eslint-config-standard": "^16.0.2",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-standard": "^5.0.0",
-    "mocha": "^8.3.2",
+    "mocha": "^8.4.0",
     "nodemon": "^2.0.7",
-    "prettier": "^2.2.1"
+    "prettier": "^2.3.0"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "cidr-matcher": "^2.1.1",
     "connect-timeout": "^1.9.0",
     "express": "^4.17.1",
-    "helmet": "^4.5.0",
+    "helmet": "^4.6.0",
     "http-headers": "^3.0.2",
-    "ioredis": "^4.26.0",
+    "ioredis": "^4.27.4",
     "kubernetes-client": "kubesail/kubernetes-client#552b1e23474164c9111ec0e7bb8c8c5a04ce15af",
     "lodash": "^4.17.21",
     "lru-cache": "^6.0.0",
@@ -51,7 +51,7 @@
     "socket.io": "^2.4.1",
     "socket.io-client": "^2.4.0",
     "socket.io-stream": "^0.9.1",
-    "validator": "^13.5.2",
+    "validator": "^13.6.0",
     "winston": "^3.3.3"
   }
 }
