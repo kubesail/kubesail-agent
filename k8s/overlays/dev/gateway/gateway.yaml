@@ -19,7 +19,6 @@ spec:
         #     - name: NODE_ENV
         #       value: development
         - name: kubesail-gateway
-          command: ["/home/node/app/bin/node.sh", "gateway"]
           image: kubesail/agent
           imagePullPolicy: IfNotPresent
           ports:
