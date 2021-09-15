@@ -17,12 +17,17 @@ TAG="kubesail/agent:v$(cat VERSION.txt)"
 
 ./bin/generate_self_signed_cert.sh
 
-BUILDX_COMMAND="docker buildx"
-command -v buildx > /dev/null && BUILDX_COMMAND="buildx"
+BUILDX_PREFIX="docker buildx"
+command -v buildx > /dev/null && BUILDX_PREFIX="buildx"
 
-${BUILDX_COMMAND} build \
-  --pull \
-  --platform linux/amd64,linux/arm64,linux/arm/v7 \
-  -t ${TAG} \
-  --push \
-  .
+set -e
+
+if [[ ! -f .pnp.cjs ]]; then
+  set -x
+  docker build -t ${TAG}-pnp -f Dockerfile-pnp .
+  docker run --rm -d --name=kubesail-agent-pnp --entrypoint=sleep ${TAG}-pnp 30
+  docker cp kubesail-agent-pnp:/home/node/app/.pnp.cjs .
+  docker kill kubesail-agent-pnp
+fi
+
+${BUILDX_PREFIX} build --pull --platform linux/amd64,linux/arm64,linux/arm/v7 -t ${TAG} --push .
