@@ -31,3 +31,5 @@ terraform.tfstate.*
 *.crt
 *.key
 *.csr
+.pnp.cjs
+.yarn

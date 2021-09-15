@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 APP_PATH="/home/node/app/bin/kubesail-agent"
 WATCH_PATH="lib/agent"
