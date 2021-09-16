@@ -10,7 +10,6 @@
 # include workspace
 !.yarnrc.yml
 !.pnp.cjs
-!.eslintrc.json
 !package.json
 !yarn.lock
 !bin
