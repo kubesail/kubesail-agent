@@ -1,5 +1,4 @@
 FROM node:16-buster-slim
-USER node
 WORKDIR /home/node/app
 COPY --chown=node:node . .
 

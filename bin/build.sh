@@ -23,12 +23,12 @@ command -v buildx > /dev/null && BUILDX_PREFIX="buildx"
 set -e
 
 if [[ ! -f .pnp.cjs ]]; then
-  set -x
+  git checkout -- .yarn
   docker build -t ${TAG}-pnp -f Dockerfile-pnp .
   docker run --rm -d --name=kubesail-agent-pnp --entrypoint=sleep ${TAG}-pnp 30
   docker cp kubesail-agent-pnp:/home/node/app/.pnp.cjs .
   rm -rfv .yarn
-  docker cp -r kubesail-agent-pnp:/home/node/app/.yarn .yarn
+  docker cp kubesail-agent-pnp:/home/node/app/.yarn .yarn
   docker kill kubesail-agent-pnp
 fi
 
