@@ -27,6 +27,8 @@ if [[ ! -f .pnp.cjs ]]; then
   docker build -t ${TAG}-pnp -f Dockerfile-pnp .
   docker run --rm -d --name=kubesail-agent-pnp --entrypoint=sleep ${TAG}-pnp 30
   docker cp kubesail-agent-pnp:/home/node/app/.pnp.cjs .
+  rm -rfv .yarn
+  docker cp -r kubesail-agent-pnp:/home/node/app/.yarn .yarn
   docker kill kubesail-agent-pnp
 fi
 
