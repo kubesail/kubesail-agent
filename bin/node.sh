@@ -18,5 +18,5 @@ if [[ $NODE_ENV == "development" && -f ./node_modules/.bin/nodemon ]]; then
     --ext js,json,yaml,plain \
     -- --inspect=0.0.0.0:9229 --stack_size=1200 ${APP_PATH} $@
 else
-  node --stack_size=1200 ${APP_PATH} $@
+  node --require /home/node/app/.pnp.cjs --stack_size=1200 ${APP_PATH} $@
 fi
