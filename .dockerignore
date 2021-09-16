@@ -6,17 +6,18 @@
 !.yarn/releases
 !.yarn/plugins
 !.yarn/versions
+
+# include workspace
 !.yarnrc.yml
 !.pnp.cjs
 !.eslintrc.json
-
-# include workspace
 !package.json
 !yarn.lock
 !bin
 !lib
 !test
+!k8s/overlays/dev/secrets
 
 # include metadata files
-!VERSION
+!VERSION.txt
 !Dockerfile
