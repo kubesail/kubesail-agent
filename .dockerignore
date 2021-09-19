@@ -1,22 +1,22 @@
-.git
-.gitignore
-node_modules
-*.log
-*.tmp
-*.plain
-*.secret
-*.gz
-*.map
-*.tar.gz
-*.local
-.secret
-.circleci
-flow-typed
-inf
-docker-compose.yml
-gulpfile.js
-.tern-project
-.snyk
-.vagrant
-Vagrantfile
-tmp
+# Ignore everything
+**
+
+# include Yarn 2 configuration, cache, releases and plugins
+!.yarn/cache
+!.yarn/releases
+!.yarn/plugins
+!.yarn/versions
+
+# include workspace
+!.yarnrc.yml
+!.pnp.cjs
+!package.json
+!yarn.lock
+!bin
+!lib
+!test
+!k8s/overlays/dev/secrets
+
+# include metadata files
+!VERSION.txt
+!Dockerfile
