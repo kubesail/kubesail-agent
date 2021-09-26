@@ -1,6 +1,7 @@
 #!/bin/bash
-
 set -e
+
+TAG="kubesail/agent:v$(cat VERSION.txt)"
 
 if [[ ! -f .pnp.cjs ]]; then
   git checkout -- .yarn
@@ -10,4 +11,5 @@ if [[ ! -f .pnp.cjs ]]; then
   rm -rfv .yarn
   docker cp kubesail-agent-pnp:/home/node/app/.yarn .yarn
   docker kill kubesail-agent-pnp
+  git checkout -- .yarn/releases/yarn-berry.cjs
 fi
