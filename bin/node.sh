@@ -16,7 +16,14 @@ if [[ $NODE_ENV == "development" && -f ./node_modules/.bin/nodemon ]]; then
     --watch lib/shared \
     --watch "${WATCH_PATH}" \
     --ext js,json,yaml,plain \
-    -- --inspect=0.0.0.0:9229 --stack_size=1200 ${APP_PATH} $@
+    -- \
+    --require /home/node/app/.pnp.cjs \
+    --inspect=0.0.0.0:9229 \
+    --stack_size=1200 \
+    ${APP_PATH} $@
 else
-  node --require /home/node/app/.pnp.cjs --stack_size=1200 ${APP_PATH} $@
+  node \
+    --require /home/node/app/.pnp.cjs \
+    --stack_size=1200 \
+    ${APP_PATH} $@
 fi
