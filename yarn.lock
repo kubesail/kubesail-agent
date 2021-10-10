@@ -3719,9 +3719,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kubernetes-client@kubesail/kubernetes-client#552b1e23474164c9111ec0e7bb8c8c5a04ce15af":
+"kubernetes-client@kubesail/kubernetes-client#9bfd1ad073299045bd8c4ae2d0bbdc16448b866c":
   version: 9.0.0
-  resolution: "kubernetes-client@https://github.com/kubesail/kubernetes-client.git#commit=552b1e23474164c9111ec0e7bb8c8c5a04ce15af"
+  resolution: "kubernetes-client@https://github.com/kubesail/kubernetes-client.git#commit=9bfd1ad073299045bd8c4ae2d0bbdc16448b866c"
   dependencies:
     "@kubernetes/client-node": 0.10.2
     camelcase: ^6.0.0
@@ -3736,7 +3736,7 @@ __metadata:
     swagger-fluent: ^5.0.3
     url-join: ^4.0.1
     ws: ^7.2.3
-  checksum: d577474ac5651a8e7fe97ac0b9c29637140a93c58c723aed94a1c3e69cccbf467a9ed61baed5699a93e3638547a33fbfd11225e2347f329b0d1d47e61036af61
+  checksum: 360ebdf91e7d0046a519fe2641fef39fba6d1d8376951d922c9e14335d92259f3e7f7f8bc25e31c081ce859171a2f2d2dfc8111ca151d4a7edc565d64fd34cdd
   languageName: node
   linkType: hard
 
@@ -3764,7 +3764,7 @@ __metadata:
     helmet: ^4.6.0
     http-headers: ^3.0.2
     ioredis: ^4.27.4
-    kubernetes-client: "kubesail/kubernetes-client#552b1e23474164c9111ec0e7bb8c8c5a04ce15af"
+    kubernetes-client: "kubesail/kubernetes-client#9bfd1ad073299045bd8c4ae2d0bbdc16448b866c"
     lodash: ^4.17.21
     lru-cache: ^6.0.0
     mocha: ^8.4.0
