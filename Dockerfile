@@ -5,7 +5,7 @@ ENV NODE_ENV "production"
 
 COPY --chown=node:node k8s/overlays/dev/secrets ./secrets/
 COPY --chown=node:node .yarn ./.yarn
-COPY --chown=node:node .pnp.cjs package.json yarn.lock .eslintrc.json .yarnrc.yaml ./
+COPY --chown=node:node .pnp.cjs package.json yarn.lock .yarnrc.yml ./
 
 RUN yarn config set enableNetwork false && \
   yarn install --immutable --immutable-cache
