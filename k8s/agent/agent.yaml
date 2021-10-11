@@ -51,3 +51,11 @@ spec:
             limits:
               cpu: "2"
               memory: 1500Mi
+          volumeMounts:
+            - name: avahi
+              mountPath: /mnt/avahi
+      volumes:
+        - name: avahi
+          hostPath:
+            path: /etc/avahi
+            type: DirectoryOrCreate
