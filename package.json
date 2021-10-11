@@ -41,7 +41,7 @@
     "helmet": "^4.6.0",
     "http-headers": "^3.0.2",
     "ioredis": "^4.27.4",
-    "kubernetes-client": "kubesail/kubernetes-client#552b1e23474164c9111ec0e7bb8c8c5a04ce15af",
+    "kubernetes-client": "kubesail/kubernetes-client#461d6968844542ba2738dbd9acdc4884a6aa02b8",
     "lodash": "^4.17.21",
     "lru-cache": "^6.0.0",
     "morgan": "^1.10.0",
