@@ -51,3 +51,32 @@ spec:
             limits:
               cpu: "2"
               memory: 1500Mi
+          volumeMounts:
+            - name: avahi
+              mountPath: /mnt/avahi
+            - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+              name: kube-api-access
+              readOnly: true
+      volumes:
+        - name: avahi
+          hostPath:
+            path: /etc/avahi
+            type: DirectoryOrCreate
+        - name: kube-api-access
+          projected:
+            defaultMode: 420
+            sources:
+              - serviceAccountToken:
+                  expirationSeconds: 600
+                  path: token
+              - configMap:
+                  items:
+                    - key: ca.crt
+                      path: ca.crt
+                  name: kube-root-ca.crt
+              - downwardAPI:
+                  items:
+                    - fieldRef:
+                        apiVersion: v1
+                        fieldPath: metadata.namespace
+                      path: namespace
