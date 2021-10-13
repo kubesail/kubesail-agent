@@ -3678,7 +3678,7 @@ __metadata:
     swagger-fluent: ^5.0.3
     url-join: ^4.0.1
     ws: ^7.2.3
-  checksum: b5b7aa548db9021eaff6a080fbbac139dbde9e341f42653ce39ba8450969021f157a0773290c1556aeb3be7ae350bf06d95d0239531126838c0377c34ff26c11
+  checksum: 02ee3b2a77d96ffa7c68130ce7f14e6963e2055fdedf564fcaa375c63d60beebb810d8290355e895512a78150c3d9ae0bfd14065313794088c4f571b47faccb4
   languageName: node
   linkType: hard
 
