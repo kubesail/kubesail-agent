@@ -62,7 +62,7 @@ spec:
       volumes:
         - hostPath:
             path: /run/dbus
-            type: Directory
+            type: DirectoryOrCreate
           name: host-dbus
         - name: kube-api-access
           projected:
