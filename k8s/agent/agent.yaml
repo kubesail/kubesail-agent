@@ -16,6 +16,7 @@ spec:
       annotations:
         prometheus.io/port: "5000"
         prometheus.io/scrape: "true"
+        container.apparmor.security.beta.kubernetes.io/agent: "unconfined"
       labels:
         app: kubesail-agent
         tier: service
