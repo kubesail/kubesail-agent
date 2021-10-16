@@ -16,24 +16,12 @@ spec:
       annotations:
         prometheus.io/port: "5000"
         prometheus.io/scrape: "true"
+        container.apparmor.security.beta.kubernetes.io/agent: "unconfined"
       labels:
         app: kubesail-agent
         tier: service
     spec:
       terminationGracePeriodSeconds: 0
-      initContainers:
-        - command:
-            [
-              "sh",
-              "-c",
-              "mkdir -p /mnt/avahi && touch /mnt/avahi/hosts && chown -f -R 1000:1000 /mnt/avahi/hosts",
-            ]
-          image: busybox:1.34.0
-          imagePullPolicy: IfNotPresent
-          name: chown-avahi
-          volumeMounts:
-            - mountPath: /mnt/avahi
-              name: avahi
       containers:
         - name: agent
           image: kubesail/agent
@@ -57,6 +45,10 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: status.hostIP
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
           resources:
             requests:
               cpu: 50m
@@ -65,16 +57,16 @@ spec:
               cpu: "2"
               memory: 1500Mi
           volumeMounts:
-            - name: avahi
-              mountPath: /mnt/avahi
             - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
               name: kube-api-access
               readOnly: true
+            - mountPath: /host/run/dbus
+              name: host-dbus
       volumes:
-        - name: avahi
-          hostPath:
-            path: /etc/avahi
+        - hostPath:
+            path: /run/dbus
             type: DirectoryOrCreate
+          name: host-dbus
         - name: kube-api-access
           projected:
             defaultMode: 420

@@ -13,4 +13,6 @@ RUN yarn config set enableNetwork false && \
 COPY --chown=node:node . .
 
 ENV NODE_OPTIONS "--require /home/node/app/.pnp.cjs"
+ENV DBUS_SYSTEM_BUS_ADDRESS "unix:path=/host/run/dbus/system_bus_socket"
+
 CMD ["/home/node/app/bin/node.sh", "agent"]
