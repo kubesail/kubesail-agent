@@ -1,4 +1,4 @@
-FROM node:16-buster-slim
+FROM node:17-bullseye-slim
 WORKDIR /home/node/app
 COPY --chown=node:node . .
 
