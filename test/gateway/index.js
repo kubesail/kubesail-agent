@@ -115,7 +115,7 @@ describe('Gateway tests', function () {
     it('Routes to the Kube API when using the clusterAddress', function (done) {
       const req = https.request(
         Object.assign({}, httpsReqOpts, {
-          headers: { host: 'a-dev-cluster.erulabs.kubesail-gateway.default.svc.cluster.local' },
+          headers: { host: 'a-dev-cluster.erulabs.kubesail-gateway' },
           path: '/'
         }),
         res => {
@@ -161,7 +161,7 @@ describe('Gateway tests', function () {
     // it('Returns a 403 from the kube-api server', function(done) {
     //   const req = https.request(
     //     Object.assign({}, httpsReqOpts, {
-    //       headers: { host: 'mycluster.erulabs.kubesail-gateway.default.svc.cluster.local' },
+    //       headers: { host: 'mycluster.erulabs.kubesail-gateway' },
     //       path: '/openapi/v2'
     //     }),
     //     res => {

@@ -1,9 +1,10 @@
 FROM node:17-bullseye-slim
+
+RUN apt-get -yqq update && apt-get -yqq install bash curl
+
 USER node
 WORKDIR /home/node/app
 ENV NODE_ENV "production"
-
-RUN apt-get -yqq update && apt-get -yqq install bash curl
 
 COPY --chown=node:node k8s/overlays/dev/secrets ./secrets/
 COPY --chown=node:node .yarn ./.yarn
