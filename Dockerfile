@@ -1,4 +1,4 @@
-FROM node:17-bullseye-slim
+FROM node:16-bullseye-slim
 
 RUN apt-get -yqq update && apt-get -yqq install bash curl
 
