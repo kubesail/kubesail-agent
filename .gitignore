@@ -33,4 +33,4 @@ terraform.tfstate.*
 *.csr
 .pnp.cjs
 .yarn/*
-!.yarn/releases/yarn-berry.cjs
+!.yarn/releases/yarn-*.cjs

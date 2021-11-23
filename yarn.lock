@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 4
+  version: 5
   cacheKey: 8
 
 "@babel/code-frame@npm:7.12.11":
@@ -30,7 +30,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:7.15.8, @babel/core@npm:^7.14.3":
+"@babel/core@npm:^7.14.3":
   version: 7.15.8
   resolution: "@babel/core@npm:7.15.8"
   dependencies:
@@ -260,6 +260,16 @@ __metadata:
     "@babel/helper-validator-identifier": ^7.14.9
     to-fast-properties: ^2.0.0
   checksum: 37f497dde10d238b5eb184efab83b415a86611e3d73dc0434de0cfb851b20ee606a3b7e1525e5b2d522fac1248d0345fea0468006f246262511b80cd3ed2419f
+  languageName: node
+  linkType: hard
+
+"@balena/proxy-protocol-parser@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@balena/proxy-protocol-parser@npm:1.0.2"
+  dependencies:
+    hexy: ^0.3.0
+    ip-address: ^5.9.0
+  checksum: 7702d6e6cac00b2ecda38cc6914effd4347b53a2527b8da9ea2c4d4a57cec5ee11eb92030c2cac6c64fa967e31657ac6bda93a375948aa7bc7c2dbd70d6dbb55
   languageName: node
   linkType: hard
 
@@ -2627,10 +2637,10 @@ __metadata:
 
 "fsevents@patch:fsevents@~2.3.1#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=1cc4b2"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
   dependencies:
     node-gyp: latest
-  checksum: 78db9daf1f6526a49cefee3917cc988f62dc7f25b5dd80ad6de4ffc4af7f0cab7491ac737626ff53e482a111bc53aac9e411fe3602458eca36f6a003ecf69c16
+  conditions: os=darwin
   languageName: node
   linkType: hard
 
@@ -2640,6 +2650,7 @@ __metadata:
   dependencies:
     node-gyp: latest
   checksum: 97ade64e75091afee5265e6956cb72ba34db7819b4c3e94c431d4be2b19b8bb7a2d4116da417950c3425f17c8fe693d25e20212cac583ac1521ad066b77ae31f
+  conditions: os=darwin
   languageName: node
   linkType: hard
 
@@ -2971,6 +2982,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hexy@npm:^0.3.0":
+  version: 0.3.3
+  resolution: "hexy@npm:0.3.3"
+  bin:
+    hexy: bin/hexy_cmd.js
+  checksum: f29b0309790afd8ea729ec128d025b250344f2874150d105505776960da2f32f7aaed479e34c808ba4e31c8abc7037969b249240c0faf449ff71e20c00671643
+  languageName: node
+  linkType: hard
+
 "home-or-tmp@npm:^2.0.0":
   version: 2.0.0
   resolution: "home-or-tmp@npm:2.0.0"
@@ -3241,6 +3261,17 @@ __metadata:
     redis-parser: ^3.0.0
     standard-as-callback: ^2.1.0
   checksum: 0df459f7ab997398e1a6410e0d45e71e48f92babe2c4de310a2d018e56dde34f531e051f26b3baf05f6709e89a407c740017a4ef18e421486dfa5df2b4faf555
+  languageName: node
+  linkType: hard
+
+"ip-address@npm:^5.9.0":
+  version: 5.9.4
+  resolution: "ip-address@npm:5.9.4"
+  dependencies:
+    jsbn: 1.1.0
+    lodash: ^4.17.15
+    sprintf-js: 1.1.2
+  checksum: 2822dfefe6ff160ba6846bc03954ecc3d74d99db92431c7808e2eeb6f4c201caa9b44b4d5ee8b7164888bb1f40a74f0b6269c03c654cf065264dc973f62e4fa9
   languageName: node
   linkType: hard
 
@@ -3615,6 +3646,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsbn@npm:1.1.0":
+  version: 1.1.0
+  resolution: "jsbn@npm:1.1.0"
+  checksum: 944f924f2bd67ad533b3850eee47603eed0f6ae425fd1ee8c760f477e8c34a05f144c1bd4f5a5dd1963141dc79a2c55f89ccc5ab77d039e7077f3ad196b64965
+  languageName: node
+  linkType: hard
+
 "jsbn@npm:~0.1.0":
   version: 0.1.1
   resolution: "jsbn@npm:0.1.1"
@@ -3774,6 +3812,7 @@ __metadata:
   resolution: "kubesail-agent@workspace:."
   dependencies:
     "@babel/core": ^7.14.3
+    "@balena/proxy-protocol-parser": ^1.0.2
     babel-core: ^6.26.3
     babel-eslint: ^10.1.0
     body-parser: ^1.19.0
@@ -3899,7 +3938,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.21, lodash@npm:^4.17.4":
+"lodash@npm:^4.17.15, lodash@npm:^4.17.21, lodash@npm:^4.17.4":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -5158,11 +5197,11 @@ __metadata:
 
 "resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>":
   version: 1.20.0
-  resolution: "resolve@patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff"
+  resolution: "resolve@patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b"
   dependencies:
     is-core-module: ^2.2.0
     path-parse: ^1.0.6
-  checksum: bed00be983cd20a8af0e7840664f655c4b269786dbd9595c5f156cd9d8a0050e65cdbbbdafc30ee9b6245b230c78a2c8ab6447a52545b582f476c29adb188cc5
+  checksum: a0dd7d16a8e47af23afa9386df2dff10e3e0debb2c7299a42e581d9d9b04d7ad5d2c53f24f1e043f7b3c250cbdc71150063e53d0b6559683d37f790b7c8c3cd5
   languageName: node
   linkType: hard
 
@@ -5557,6 +5596,13 @@ __metadata:
   dependencies:
     through: 2
   checksum: 2e076634c9637cfdc54ab4387b6a243b8c33b360874a25adf6f327a5647f07cb3bf1c755d515248eb3afee4e382278d01f62c62d87263c118f28065b86f74f02
+  languageName: node
+  linkType: hard
+
+"sprintf-js@npm:1.1.2":
+  version: 1.1.2
+  resolution: "sprintf-js@npm:1.1.2"
+  checksum: d4bb46464632b335e5faed381bd331157e0af64915a98ede833452663bc672823db49d7531c32d58798e85236581fb7342fd0270531ffc8f914e186187bf1c90
   languageName: node
   linkType: hard
 
