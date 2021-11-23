@@ -43,6 +43,7 @@
     "helmet": "^4.6.0",
     "http-headers": "^3.0.2",
     "ioredis": "^4.27.4",
+    "ipaddr.js": "^2.0.1",
     "kubernetes-client": "kubesail/kubernetes-client#461d6968844542ba2738dbd9acdc4884a6aa02b8",
     "lodash": "^4.17.21",
     "lru-cache": "^6.0.0",
