@@ -263,6 +263,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@balena/proxy-protocol-parser@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@balena/proxy-protocol-parser@npm:1.0.2"
+  dependencies:
+    hexy: ^0.3.0
+    ip-address: ^5.9.0
+  checksum: 7702d6e6cac00b2ecda38cc6914effd4347b53a2527b8da9ea2c4d4a57cec5ee11eb92030c2cac6c64fa967e31657ac6bda93a375948aa7bc7c2dbd70d6dbb55
+  languageName: node
+  linkType: hard
+
 "@dabh/diagnostics@npm:^2.0.2":
   version: 2.0.2
   resolution: "@dabh/diagnostics@npm:2.0.2"
@@ -2972,6 +2982,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hexy@npm:^0.3.0":
+  version: 0.3.3
+  resolution: "hexy@npm:0.3.3"
+  bin:
+    hexy: bin/hexy_cmd.js
+  checksum: f29b0309790afd8ea729ec128d025b250344f2874150d105505776960da2f32f7aaed479e34c808ba4e31c8abc7037969b249240c0faf449ff71e20c00671643
+  languageName: node
+  linkType: hard
+
 "home-or-tmp@npm:^2.0.0":
   version: 2.0.0
   resolution: "home-or-tmp@npm:2.0.0"
@@ -3242,6 +3261,17 @@ __metadata:
     redis-parser: ^3.0.0
     standard-as-callback: ^2.1.0
   checksum: 0df459f7ab997398e1a6410e0d45e71e48f92babe2c4de310a2d018e56dde34f531e051f26b3baf05f6709e89a407c740017a4ef18e421486dfa5df2b4faf555
+  languageName: node
+  linkType: hard
+
+"ip-address@npm:^5.9.0":
+  version: 5.9.4
+  resolution: "ip-address@npm:5.9.4"
+  dependencies:
+    jsbn: 1.1.0
+    lodash: ^4.17.15
+    sprintf-js: 1.1.2
+  checksum: 2822dfefe6ff160ba6846bc03954ecc3d74d99db92431c7808e2eeb6f4c201caa9b44b4d5ee8b7164888bb1f40a74f0b6269c03c654cf065264dc973f62e4fa9
   languageName: node
   linkType: hard
 
@@ -3616,6 +3646,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsbn@npm:1.1.0":
+  version: 1.1.0
+  resolution: "jsbn@npm:1.1.0"
+  checksum: 944f924f2bd67ad533b3850eee47603eed0f6ae425fd1ee8c760f477e8c34a05f144c1bd4f5a5dd1963141dc79a2c55f89ccc5ab77d039e7077f3ad196b64965
+  languageName: node
+  linkType: hard
+
 "jsbn@npm:~0.1.0":
   version: 0.1.1
   resolution: "jsbn@npm:0.1.1"
@@ -3775,6 +3812,7 @@ __metadata:
   resolution: "kubesail-agent@workspace:."
   dependencies:
     "@babel/core": ^7.14.3
+    "@balena/proxy-protocol-parser": ^1.0.2
     babel-core: ^6.26.3
     babel-eslint: ^10.1.0
     body-parser: ^1.19.0
@@ -3900,7 +3938,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.21, lodash@npm:^4.17.4":
+"lodash@npm:^4.17.15, lodash@npm:^4.17.21, lodash@npm:^4.17.4":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -5558,6 +5596,13 @@ __metadata:
   dependencies:
     through: 2
   checksum: 2e076634c9637cfdc54ab4387b6a243b8c33b360874a25adf6f327a5647f07cb3bf1c755d515248eb3afee4e382278d01f62c62d87263c118f28065b86f74f02
+  languageName: node
+  linkType: hard
+
+"sprintf-js@npm:1.1.2":
+  version: 1.1.2
+  resolution: "sprintf-js@npm:1.1.2"
+  checksum: d4bb46464632b335e5faed381bd331157e0af64915a98ede833452663bc672823db49d7531c32d58798e85236581fb7342fd0270531ffc8f914e186187bf1c90
   languageName: node
   linkType: hard
 
