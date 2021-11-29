@@ -17,7 +17,6 @@
 
 *.tar.gz
 *.log
-/secrets
 *.pem
 .secret
 *.plain
