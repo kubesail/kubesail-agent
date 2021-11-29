@@ -3849,8 +3849,10 @@ __metadata:
     nodemon: ^2.0.7
     prettier: ^2.3.0
     prom-client: ^13.2.0
+    proxy-protocol-js: ^4.0.5
     serialize-error: ^7.0.1
     sni: ^1.0.0
+    sni-reader: ^0.1.1
     socket.io: ^2.4.1
     socket.io-client: ^2.4.0
     socket.io-stream: ^0.9.1
@@ -4922,6 +4924,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"proxy-protocol-js@npm:^4.0.5":
+  version: 4.0.5
+  resolution: "proxy-protocol-js@npm:4.0.5"
+  checksum: 2d1a6a68cc54a1ce54bbd58f9cd6b6b8c5d53b64e19d17db3dce8733b314e4f80b43337cd63672929f6645a66a0404ffc65f18568ed619a8267bdbfd869a85ac
+  languageName: node
+  linkType: hard
+
 "psl@npm:^1.1.28":
   version: 1.8.0
   resolution: "psl@npm:1.8.0"
@@ -5479,6 +5488,13 @@ __metadata:
   version: 4.2.0
   resolution: "smart-buffer@npm:4.2.0"
   checksum: b5167a7142c1da704c0e3af85c402002b597081dd9575031a90b4f229ca5678e9a36e8a374f1814c8156a725d17008ae3bde63b92f9cfd132526379e580bec8b
+  languageName: node
+  linkType: hard
+
+"sni-reader@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "sni-reader@npm:0.1.1"
+  checksum: f7c9dcc67cd3c51a3520cda127aa9648712df89098827167293292410caf49eac876e5792532ab1919c60a6aca226575c4b22a1ca66c49a3012fc412b7d14012
   languageName: node
   linkType: hard
 
