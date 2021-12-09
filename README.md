@@ -32,3 +32,11 @@ Install [skaffold](https://skaffold.dev/) and have a Kubernetes context ready, t
 `skaffold dev --port-forward`
 
 That's it!
+
+## Updating built-in CRDs
+
+KubeSail agent will automatically install the cert-manager CRDs when cert-manager is being installed. These can be updated with:
+
+```
+curl -sL https://github.com/jetstack/cert-manager/releases/download/v1.6.1/cert-manager.crds.yaml | yq eval -j - > code/kubesail. com/modules/kubesail-agent/lib/agent/cert-manager.crds.json
+```
