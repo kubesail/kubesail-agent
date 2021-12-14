@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -5,6 +6,7 @@ metadata:
 spec:
   template:
     spec:
+      terminationGracePeriodSeconds: 0
       containers:
         - name: agent
           image: kubesail/agent
