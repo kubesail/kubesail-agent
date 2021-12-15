@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1.3
+
 FROM node:16-bullseye-slim
 
 RUN apt-get -yqq update && apt-get -yqq install bash curl
