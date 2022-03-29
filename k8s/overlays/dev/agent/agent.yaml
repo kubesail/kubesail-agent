@@ -22,10 +22,11 @@ spec:
               value: development
             - name: KUBESAIL_API_TARGET
               value: api
-            - name: KUBESAIL_AGENT_KEY
-              value: locallocallocallocallocallocallo
-            - name: KUBESAIL_AGENT_SECRET
-              value: locallocallocallocallocallocallo
+            # Comment these out to test QR code verification
+            # - name: KUBESAIL_AGENT_KEY
+            #   value: locallocallocallocallocallocallo
+            # - name: KUBESAIL_AGENT_SECRET
+            #   value: locallocallocallocallocallocallo
             - name: KUBESAIL_AGENT_EMAIL
               value: blackhole+locallocallocallocallocallocallo@kubesail.com
             - name: APP_ENV

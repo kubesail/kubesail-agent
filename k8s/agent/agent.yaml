@@ -63,13 +63,11 @@ spec:
             - name: NODE_ENV
               value: development
             - name: NODE_IP
-              valueFrom:
-                fieldRef:
-                  fieldPath: status.hostIP
+              valueFrom: { fieldRef: { fieldPath: status.hostIP } }
             - name: NODE_NAME
-              valueFrom:
-                fieldRef:
-                  fieldPath: spec.nodeName
+              valueFrom: { fieldRef: { fieldPath: spec.nodeName } }
+            - name: POD_NAMESPACE
+              valueFrom: { fieldRef: { fieldPath: metadata.namespace } }
           resources:
             requests:
               cpu: 50m
