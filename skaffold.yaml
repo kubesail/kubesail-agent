@@ -15,4 +15,5 @@ build:
 deploy:
   kustomize:
     paths:
-      - k8s/overlays/dev
+      - k8s/overlays/dev/agent
+      - k8s/overlays/dev/gateway

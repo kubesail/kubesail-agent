@@ -81,11 +81,17 @@ spec:
               readOnly: true
             - mountPath: /host/run/dbus
               name: host-dbus
+            - mountPath: /var/run/pibox
+              name: pibox-run
       volumes:
-        - hostPath:
+        - name: host-dbus
+          hostPath:
             path: /run/dbus
             type: DirectoryOrCreate
-          name: host-dbus
+        - name: pibox-run
+          hostPath:
+            path: /var/run/pibox
+            type: DirectoryOrCreate
         - name: kube-api-access
           projected:
             defaultMode: 420
