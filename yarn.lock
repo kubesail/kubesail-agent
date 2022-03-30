@@ -3808,6 +3808,7 @@ __metadata:
     lru-cache: ^6.0.0
     mocha: ^8.4.0
     morgan: ^1.10.0
+    nanoid: ^3.3.2
     nodemon: ^2.0.7
     prettier: ^2.3.0
     prom-client: ^13.2.0
@@ -4283,6 +4284,15 @@ __metadata:
   bin:
     nanoid: bin/nanoid.cjs
   checksum: f6246023d5d8313c2c16be05c18cdb189a6de50ab6418b513b34086eda4aabd12866b2cbe435548c760dc43cf11830b26b14b113afde47305398e3345795e433
+  languageName: node
+  linkType: hard
+
+"nanoid@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "nanoid@npm:3.3.2"
+  bin:
+    nanoid: bin/nanoid.cjs
+  checksum: 376717f0685251fad77850bd84c6b8d57837c71eeb1c05be7c742140cc1835a5a2953562add05166d6dbc8fb65f3fdffa356213037b967a470e1691dc3e7b9cc
   languageName: node
   linkType: hard
 
