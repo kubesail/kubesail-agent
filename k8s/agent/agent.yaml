@@ -42,6 +42,10 @@ spec:
         app: kubesail-agent
         tier: service
     spec:
+      securityContext:
+        runAsUser: 989
+        runAsGroup: 989
+        fsGroup: 989
       serviceAccountName: kubesail-agent
       containers:
         - name: agent
