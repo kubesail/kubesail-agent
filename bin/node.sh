@@ -13,6 +13,7 @@ if [[ "$1" == "agent" ]]; then
   if [[ ! -f $FB_PATH ]]; then
     curl --connect-timeout 10 -sLo $FB_PATH https://github.com/kubesail/pibox-framebuffer/releases/download/$FB_VERSION/pibox-framebuffer
     chmod +x $FB_PATH
+    rm -f /var/run/pibox/pibox-framebuffer
     ln -s $FB_PATH /var/run/pibox/pibox-framebuffer
   fi
 fi
