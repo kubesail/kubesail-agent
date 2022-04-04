@@ -12,4 +12,4 @@ secretGenerator:
     files:
       - tls.crt=secrets/tls.crt
       - tls.key=secrets/tls.key
-    type: 'kubernetes.io/tls'
+    type: "kubernetes.io/tls"
