@@ -20,8 +20,8 @@ spec:
               value: debug
             - name: NODE_ENV
               value: development
-            - name: KUBESAIL_API_TARGET
-              value: api
+            # - name: KUBESAIL_API_TARGET
+            #   value: api
             # Comment these out to test QR code verification
             # - name: KUBESAIL_AGENT_KEY
             #   value: locallocallocallocallocallocallo
@@ -35,7 +35,7 @@ spec:
               value: "a dev cluster"
           envFrom:
             - secretRef:
-                name: agent
+                name: kubesail-agent
           volumeMounts:
             - name: self-signed
               mountPath: /app/secrets

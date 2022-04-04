@@ -3,9 +3,11 @@ bases:
 patchesStrategicMerge:
   - ./agent.yaml
 secretGenerator:
-  - name: agent
+  - name: kubesail-agent
     envs:
       - secrets/env.plain
+    options:
+      disableNameSuffixHash: true
   - name: self-signed
     files:
       - tls.crt=secrets/tls.crt
