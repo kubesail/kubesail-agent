@@ -6,6 +6,17 @@ if [[ "$1" == "gateway" ]]; then
   APP_PATH="/home/node/app/lib/gateway"
 fi
 
+if [[ "$1" == "agent" ]]; then
+  mkdir -p /var/run/pibox
+  FB_VERSION=v1
+  FB_PATH=/var/run/pibox/pibox-framebuffer-$FB_VERSION
+  if [[ ! -f $FB_PATH ]]; then
+    curl --connect-timeout 10 -sLo $FB_PATH https://github.com/kubesail/pibox-framebuffer/releases/download/$FB_VERSION/pibox-framebuffer
+    chmod +x $FB_PATH
+    ln -s $FB_PATH /var/run/pibox/pibox-framebuffer
+  fi
+fi
+
 shift
 
 if [[ $NODE_ENV == "development" ]]; then
