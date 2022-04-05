@@ -87,6 +87,8 @@ spec:
               name: host-dbus
             - mountPath: /var/run/pibox
               name: pibox-run
+            - mountPath: /opt/kubesail
+              name: opt-kubesail
       volumes:
         - name: host-dbus
           hostPath:
@@ -95,6 +97,10 @@ spec:
         - name: pibox-run
           hostPath:
             path: /var/run/pibox
+            type: DirectoryOrCreate
+        - name: opt-kubesail
+          hostPath:
+            path: /opt/kubesail
             type: DirectoryOrCreate
         - name: kube-api-access
           projected:

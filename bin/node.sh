@@ -7,15 +7,14 @@ if [[ "$1" == "gateway" ]]; then
 fi
 
 if [[ "$1" == "agent" ]]; then
-  mkdir -p /var/run/pibox
   FB_VERSION="v4"
-  FB_PATH=/var/run/pibox/pibox-framebuffer-$FB_VERSION
+  FB_PATH=/opt/kubesail/pibox-framebuffer-$FB_VERSION
   if [[ ! -f $FB_PATH ]]; then
     curl --connect-timeout 10 -sLo $FB_PATH https://github.com/kubesail/pibox-framebuffer/releases/download/$FB_VERSION/pibox-framebuffer
     chmod +x $FB_PATH
-    rm -f /var/run/pibox/pibox-framebuffer
-    ln -s $FB_PATH /var/run/pibox/pibox-framebuffer
-    curl --unix-socket /var/run/pibox/framebuffer.sock http://localhost/exit
+    rm -f /opt/kubesail/pibox-framebuffer
+    ln -s $FB_PATH /opt/kubesail/pibox-framebuffer
+    curl --unix-socket /opt/kubesail/framebuffer.sock http://localhost/exit
   fi
 fi
 
