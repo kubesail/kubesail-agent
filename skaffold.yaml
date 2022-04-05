@@ -1,6 +1,8 @@
 apiVersion: skaffold/v2beta10
 kind: Config
 build:
+  local:
+    push: true
   artifacts:
     - image: kubesail/agent
       context: .
@@ -16,4 +18,4 @@ deploy:
   kustomize:
     paths:
       - k8s/overlays/dev/agent
-      - k8s/overlays/dev/gateway
+      # - k8s/overlays/dev/gateway
