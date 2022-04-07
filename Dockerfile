@@ -2,7 +2,10 @@
 
 FROM node:16-bullseye-slim
 
-RUN apt-get -yqq update && apt-get -yqq install bash curl
+RUN usermod -u 989 node && \
+  chown -R node:node /home/node && \
+  apt-get -yqq update && \
+  apt-get -yqq install bash curl
 
 USER node
 WORKDIR /home/node/app
