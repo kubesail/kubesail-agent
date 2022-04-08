@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubesail-gateway
+spec:
+  template:
+    spec:
+      containers:
+        - name: kubesail-gateway
+          env:
+            - name: KUBESAIL_API_TARGET
+              value: api

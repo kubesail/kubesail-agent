@@ -1,0 +1,13 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubesail-agent
+spec:
+  template:
+    spec:
+      containers:
+        - name: agent
+          env:
+            - name: KUBESAIL_API_TARGET
+              value: api

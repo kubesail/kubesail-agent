@@ -1,0 +1,4 @@
+bases:
+  - ../../dev/gateway
+patchesStrategicMerge:
+  - ./gateway.yaml
