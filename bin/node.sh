@@ -8,7 +8,7 @@ fi
 
 if [[ "$1" == "agent" ]]; then
   mkdir -p /opt/kubesail &> /dev/null
-  FB_VERSION="v6"
+  FB_VERSION="v7"
   FB_PATH=/opt/kubesail/pibox-framebuffer-$FB_VERSION
   if [[ ! -f $FB_PATH && -d /opt/kubesail ]]; then
     curl --connect-timeout 10 -sLo $FB_PATH https://github.com/kubesail/pibox-framebuffer/releases/download/$FB_VERSION/pibox-framebuffer
