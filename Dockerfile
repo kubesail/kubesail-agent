@@ -3,6 +3,7 @@
 FROM node:16-bullseye-slim
 
 RUN usermod -u 989 node && \
+  mkdir -p /home/node/.dbus-keyrings && \
   chown -R node:node /home/node && \
   apt-get -yqq update && \
   apt-get -yqq install bash curl
