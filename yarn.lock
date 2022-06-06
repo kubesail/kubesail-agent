@@ -1015,6 +1015,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bcryptjs@npm:^2.4.3":
+  version: 2.4.3
+  resolution: "bcryptjs@npm:2.4.3"
+  checksum: 0e80ed852a41f5dfb1853f53ee14a7390b0ef263ce05dba6e2ef3cd919dfad025a7c21ebcfe5bc7fa04b100990edf90c7a877ff7fe623d3e479753253131b629
+  languageName: node
+  linkType: hard
+
 "binary-extensions@npm:^2.0.0":
   version: 2.2.0
   resolution: "binary-extensions@npm:2.2.0"
@@ -3729,6 +3736,7 @@ __metadata:
     "@babel/core": ^7.17.8
     babel-core: ^6.26.3
     babel-eslint: ^10.1.0
+    bcryptjs: ^2.4.3
     body-parser: ^1.20.0
     chai: ^4.3.6
     cidr-matcher: ^2.1.1
