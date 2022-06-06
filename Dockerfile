@@ -10,7 +10,9 @@ RUN usermod -u 989 node && \
 
 USER node
 WORKDIR /home/node/app
-ENV NODE_ENV "production"
+ENV NODE_ENV="production" \
+  NODE_OPTIONS="--require /home/node/app/.pnp.cjs" \
+  DBUS_SYSTEM_BUS_ADDRESS="unix:path=/host/run/dbus/system_bus_socket"
 
 COPY --chown=node:node k8s/overlays/dev/secrets ./secrets/
 COPY --chown=node:node .yarn ./.yarn
@@ -20,8 +22,5 @@ RUN yarn config set enableNetwork false && \
   yarn install --immutable --immutable-cache
 
 COPY --chown=node:node . .
-
-ENV NODE_OPTIONS "--require /home/node/app/.pnp.cjs"
-ENV DBUS_SYSTEM_BUS_ADDRESS "unix:path=/host/run/dbus/system_bus_socket"
 
 CMD ["/home/node/app/bin/node.sh", "agent"]
