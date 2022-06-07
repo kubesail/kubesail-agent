@@ -3496,6 +3496,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"isbot@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "isbot@npm:3.5.0"
+  checksum: aaf272768531e5bf146ba61c16ee542d786e6a51241a075d3bb471cd299f24d43a55ca3d2e87065e6b847f72f13ea3c52c922ccbc51aaf439f9f495d5668467f
+  languageName: node
+  linkType: hard
+
 "isexe@npm:^2.0.0":
   version: 2.0.0
   resolution: "isexe@npm:2.0.0"
@@ -3756,6 +3763,7 @@ __metadata:
     http-headers: ^3.0.2
     ioredis: ^5.0.3
     ipaddr.js: ^2.0.1
+    isbot: ^3.5.0
     kubernetes-client: "kubesail/kubernetes-client#461d6968844542ba2738dbd9acdc4884a6aa02b8"
     lodash: ^4.17.21
     lru-cache: ^7.7.3
