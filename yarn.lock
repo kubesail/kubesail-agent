@@ -4030,7 +4030,6 @@ __metadata:
     prettier: ^2.6.2
     prom-client: ^14.0.1
     punycode: ^2.1.1
-    redbird: "link:modules/redbird"
     requires-port: ^1.0.0
     safe-timers: ^1.1.0
     serialize-error: 8.1.0
@@ -5291,12 +5290,6 @@ __metadata:
   checksum: fe76bf9c21875ac16e235defedd7cbd34f333c02a92546142b7911a0f7c7059d2e16f441fe6fb9ae203f459c05a31b2bcf26202896d89e390eda7514d5d2702b
   languageName: node
   linkType: hard
-
-"redbird@link:modules/redbird::locator=kubesail-agent%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "redbird@link:modules/redbird::locator=kubesail-agent%40workspace%3A."
-  languageName: node
-  linkType: soft
 
 "redis-errors@npm:^1.0.0, redis-errors@npm:^1.2.0":
   version: 1.2.0
