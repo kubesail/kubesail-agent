@@ -297,15 +297,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@greenlock/manager@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "@greenlock/manager@npm:3.1.0"
-  dependencies:
-    greenlock-manager-fs: ^3.1.0
-  checksum: 000562c50be1a7f576c3602bf30f4407703a869b1ffe9e378be5ce48c1b567408ad618ab7d71032c1e55a3a6f03bd02ea41328ead96da283e5fd34a9cb8e7fd2
-  languageName: node
-  linkType: hard
-
 "@humanwhocodes/config-array@npm:^0.9.2":
   version: 0.9.5
   resolution: "@humanwhocodes/config-array@npm:0.9.5"
@@ -463,120 +454,6 @@ __metadata:
   version: 1.0.0
   resolution: "@panva/asn1.js@npm:1.0.0"
   checksum: cb6bcc1918a7f08e81e7d7f5bde83c20a66b30248ddc3ef10b1612e0e0b9f722c2b07ca6b586a089a49c1b6cfb29d63fdd23d4bc00c8cc40538b5595bec66d7d
-  languageName: node
-  linkType: hard
-
-"@root/acme@npm:^3.0.9, @root/acme@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "@root/acme@npm:3.1.0"
-  dependencies:
-    "@root/csr": ^0.8.1
-    "@root/encoding": ^1.0.1
-    "@root/keypairs": ^0.10.0
-    "@root/pem": ^1.0.4
-    "@root/request": ^1.6.1
-    "@root/x509": ^0.7.2
-  checksum: d67318a9ffc90b1b7ba62c0c062ea8656e2d23fa96ded30952f7a48dab27a30d50c6fd02ef1bd058976967dc25efbd4efafebdeb357dcc8d9ecf022f7323c58b
-  languageName: node
-  linkType: hard
-
-"@root/asn1@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@root/asn1@npm:1.0.0"
-  dependencies:
-    "@root/encoding": ^1.0.1
-  checksum: 5e2b27e0bfdd837e1021d9c6fdd4de3fc57f5e1371ce4897d60d4003e61f6f220442029d2dc5d6df422ad442887fd24d7ccd97ce3a54f9ed267e2af2cf47e79d
-  languageName: node
-  linkType: hard
-
-"@root/csr@npm:^0.8.1":
-  version: 0.8.1
-  resolution: "@root/csr@npm:0.8.1"
-  dependencies:
-    "@root/asn1": ^1.0.0
-    "@root/pem": ^1.0.4
-    "@root/x509": ^0.7.2
-  checksum: ca9dfe6778624b7c95562a7bdbae2e469b13d2d33fe3d509dff615fe62f93de7e3f4626ffc4651f692473e0faa244a51aa715116683d17e3f7ab84a084c96b6c
-  languageName: node
-  linkType: hard
-
-"@root/encoding@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@root/encoding@npm:1.0.1"
-  checksum: e2a20e30ff3b0c3ffbd18806050c62f5037156acd008d49d2b10cf36d6eb5e9df3d169da3c03f5e83117350cd454a042852cf1fe903e2cc5e8cd669d89baab87
-  languageName: node
-  linkType: hard
-
-"@root/greenlock@npm:^4.0.4":
-  version: 4.0.5
-  resolution: "@root/greenlock@npm:4.0.5"
-  dependencies:
-    "@greenlock/manager": ^3.1.0
-    "@root/acme": ^3.1.0
-    "@root/csr": ^0.8.1
-    "@root/keypairs": ^0.10.0
-    "@root/mkdirp": ^1.0.0
-    "@root/request": ^1.6.1
-    acme-http-01-standalone: ^3.0.5
-    cert-info: ^1.5.1
-    greenlock-store-fs: ^3.2.2
-    safe-replace: ^1.1.0
-  bin:
-    greenlock: bin/greenlock.js
-  checksum: 6d3d5876d4cf1ce45a00b6456b67f2a0d22d4a4affb8566e0f3aace19607d2f747a13d15a735dcc65bda27c85c36eb48865bb7941f8f1f777d2fec314f622f43
-  languageName: node
-  linkType: hard
-
-"@root/keypairs@npm:^0.10.0":
-  version: 0.10.3
-  resolution: "@root/keypairs@npm:0.10.3"
-  dependencies:
-    "@root/encoding": ^1.0.1
-    "@root/pem": ^1.0.4
-    "@root/x509": ^0.7.2
-  checksum: 781594f27d47230b3217671d44ab2372f14622b694a0d33a78c168bc824bbb1c1343fed494350cf8c236b50260591812e110ee24951315368eb28748ac87ec18
-  languageName: node
-  linkType: hard
-
-"@root/keypairs@npm:^0.9.0":
-  version: 0.9.0
-  resolution: "@root/keypairs@npm:0.9.0"
-  dependencies:
-    "@root/encoding": ^1.0.1
-    "@root/pem": ^1.0.4
-    "@root/x509": ^0.7.2
-  checksum: 674328f9059272c6919a3b78a14b7bb3b7d7d986d76ce0fc6873e9b456c6ed9c113511ad23d11474d4b985362cb0d8958f4e3b9afabd03deb1acff17e831b8fb
-  languageName: node
-  linkType: hard
-
-"@root/mkdirp@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@root/mkdirp@npm:1.0.0"
-  checksum: 7a5b9981b7c143b8fd065e28f3a2b1dd82449e017239d6719f460bb4dbb7c6e921162eb02fcce7cba31c8fd2057ccda6e1e20ed586ab2425ddff84dde6d9f984
-  languageName: node
-  linkType: hard
-
-"@root/pem@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "@root/pem@npm:1.0.4"
-  checksum: c8a5bcbb617a83b753a34c7f6f3bf9e108a78437f3be37c40adc52af177cbf2922c19818c221ecdbb7edcb24c1e43a746614dccbc897ede7f9dbf986d2de82fc
-  languageName: node
-  linkType: hard
-
-"@root/request@npm:^1.4.2, @root/request@npm:^1.6.1":
-  version: 1.8.1
-  resolution: "@root/request@npm:1.8.1"
-  checksum: ff2a65c00cc806d2f03a005c30b631501bae8749ecbfd4522d1acc297df98c673383735febf68ac9f817ddf82ca52591544b7086c106c817b1c6bb21915d8757
-  languageName: node
-  linkType: hard
-
-"@root/x509@npm:^0.7.2":
-  version: 0.7.2
-  resolution: "@root/x509@npm:0.7.2"
-  dependencies:
-    "@root/asn1": ^1.0.0
-    "@root/encoding": ^1.0.1
-  checksum: aa32b1de8793713fe031c64da22f583c446e9c570079aa1acdd4965284259fcfd7fc47a705a8e6960ba8b9f4ed7d6f29e797a556dfc2363d19651997c886d9ee
   languageName: node
   linkType: hard
 
@@ -892,13 +769,6 @@ __metadata:
     mime-types: ~2.1.34
     negotiator: 0.6.3
   checksum: 50c43d32e7b50285ebe84b613ee4a3aa426715a7d131b65b786e2ead0fd76b6b60091b9916d3478a75f11f162628a2139991b6c03ab3f1d9ab7c86075dc8eab4
-  languageName: node
-  linkType: hard
-
-"acme-http-01-standalone@npm:^3.0.5":
-  version: 3.0.5
-  resolution: "acme-http-01-standalone@npm:3.0.5"
-  checksum: 01a7e1e9397f14f859abef6b955b4b34886861db497e9cae85d600e50e37d2b8a294f38a7d8abf8f343bb2986a65fa4241d7422395be29c3e017ac0580941822
   languageName: node
   linkType: hard
 
@@ -1633,15 +1503,6 @@ __metadata:
   version: 0.12.0
   resolution: "caseless@npm:0.12.0"
   checksum: b43bd4c440aa1e8ee6baefee8063b4850fd0d7b378f6aabc796c9ec8cb26d27fb30b46885350777d9bd079c5256c0e1329ad0dc7c2817e0bb466810ebb353751
-  languageName: node
-  linkType: hard
-
-"cert-info@npm:^1.5.1":
-  version: 1.5.1
-  resolution: "cert-info@npm:1.5.1"
-  bin:
-    cert-info: bin/cert-info.js
-  checksum: 17a54c506842c09024b28253ebf355fc4a3b6d41f9492e5dd3fcd6c3aaee01201dacb58ac257c6f3e23b5d3dea38f748e34b49a96ef5668ca870f3bf58f49b54
   languageName: node
   linkType: hard
 
@@ -2908,7 +2769,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eventemitter3@npm:^4.0.0, eventemitter3@npm:^4.0.7":
+"eventemitter3@npm:^4.0.0":
   version: 4.0.7
   resolution: "eventemitter3@npm:4.0.7"
   checksum: 1875311c42fcfe9c707b2712c32664a245629b42bb0a5a84439762dd0fd637fc54d078155ea83c2af9e0323c9ac13687e03cfba79b03af9f40c89b4960099374
@@ -3117,7 +2978,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.15.1":
+"follow-redirects@npm:^1.0.0":
   version: 1.15.1
   resolution: "follow-redirects@npm:1.15.1"
   peerDependenciesMeta:
@@ -3484,45 +3345,6 @@ __metadata:
   version: 1.0.4
   resolution: "grapheme-splitter@npm:1.0.4"
   checksum: 0c22ec54dee1b05cd480f78cf14f732cb5b108edc073572c4ec205df4cd63f30f8db8025afc5debc8835a8ddeacf648a1c7992fe3dcd6ad38f9a476d84906620
-  languageName: node
-  linkType: hard
-
-"greenlock-manager-fs@npm:^3.1.0":
-  version: 3.1.1
-  resolution: "greenlock-manager-fs@npm:3.1.1"
-  dependencies:
-    "@root/mkdirp": ^1.0.0
-    safe-replace: ^1.1.0
-  checksum: ed4a7003947bbeba2b04e0d72cb590ca388a7eb6fe50172209f252d37851161c2bc869118d15fd228ae6ea7c6adc8ea5351f199f96fabfe2661e9d0904242e1b
-  languageName: node
-  linkType: hard
-
-"greenlock-store-fs@npm:^3.2.2":
-  version: 3.2.2
-  resolution: "greenlock-store-fs@npm:3.2.2"
-  dependencies:
-    "@root/mkdirp": ^1.0.0
-    safe-replace: ^1.1.0
-  checksum: d50a2cdddb887e5e2004fc27f8e17702f479f58afc0f209cae8598011df36931d4e8ba1494141596d9fa7e66f0e200e126c05b7efa6be6966eeb22a6855523bf
-  languageName: node
-  linkType: hard
-
-"greenlock@npm:^4.0.4":
-  version: 4.0.4
-  resolution: "greenlock@npm:4.0.4"
-  dependencies:
-    "@greenlock/manager": ^3.1.0
-    "@root/acme": ^3.0.9
-    "@root/csr": ^0.8.1
-    "@root/greenlock": ^4.0.4
-    "@root/keypairs": ^0.9.0
-    "@root/mkdirp": ^1.0.0
-    "@root/request": ^1.4.2
-    acme-http-01-standalone: ^3.0.5
-    cert-info: ^1.5.1
-    greenlock-store-fs: ^3.2.2
-    safe-replace: ^1.1.0
-  checksum: d50c8c1bfd361d7a2653652517a79be6add3d65a9d5e372df9cf0ed2aaa1f43937e34559464827012450a4c945e5f7cda61b95e7be44934d810af034658a2a2f
   languageName: node
   linkType: hard
 
@@ -3979,13 +3801,6 @@ __metadata:
   version: 1.9.1
   resolution: "ipaddr.js@npm:1.9.1"
   checksum: f88d3825981486f5a1942414c8d77dd6674dd71c065adcfa46f578d677edcb99fda25af42675cb59db492fdf427b34a5abfcde3982da11a8fd83a500b41cfe77
-  languageName: node
-  linkType: hard
-
-"ipaddr.js@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "ipaddr.js@npm:2.0.1"
-  checksum: dd194a394a843d470f88d17191b0948f383ed1c8e320813f850c336a0fcb5e9215d97ec26ca35ab4fbbd31392c8b3467f3e8344628029ed3710b2ff6b5d1034e
   languageName: node
   linkType: hard
 
@@ -4535,19 +4350,13 @@ __metadata:
     eslint-plugin-promise: ^6.0.0
     eslint-plugin-security: ^1.5.0
     eslint-plugin-standard: ^5.0.0
-    eventemitter3: ^4.0.7
     express: ^4.17.3
-    follow-redirects: ^1.15.1
-    greenlock: ^4.0.4
     helmet: ^5.0.2
     http-headers: ^3.0.2
     http-proxy: ^1.18.1
     ioredis: ^5.0.3
-    ipaddr.js: ^2.0.1
     isbot: ^3.5.0
     kubernetes-client: "kubesail/kubernetes-client#461d6968844542ba2738dbd9acdc4884a6aa02b8"
-    le-challenge-fs: ^2.0.9
-    le-store-certbot: ^2.2.3
     lodash: ^4.17.21
     lru-cache: ^7.7.3
     mocha: ^9.2.2
@@ -4555,11 +4364,9 @@ __metadata:
     nanoid: ^3.3.2
     node-fetch: 2
     nodemon: ^2.0.15
-    object-hash: ^3.0.0
     prettier: ^2.6.2
     prom-client: ^14.0.1
     punycode: ^2.1.1
-    requires-port: ^1.0.0
     safe-timers: ^1.1.0
     serialize-error: 8.1.0
     sni: ^1.0.0
@@ -4567,7 +4374,6 @@ __metadata:
     socket.io-client: ^2.4.0
     socket.io-stream: ^0.9.1
     spdy: ^4.0.2
-    valid-url: ^1.0.9
     validator: ^13.7.0
     winston: ^3.7.2
   languageName: unknown
@@ -4586,26 +4392,6 @@ __metadata:
   dependencies:
     package-json: ^6.3.0
   checksum: fbc72b071eb66c40f652441fd783a9cca62f08bf42433651937f078cd9ef94bf728ec7743992777826e4e89305aef24f234b515e6030503a2cbee7fc9bdc2c0f
-  languageName: node
-  linkType: hard
-
-"le-challenge-fs@npm:^2.0.9":
-  version: 2.0.9
-  resolution: "le-challenge-fs@npm:2.0.9"
-  dependencies:
-    "@root/mkdirp": ^1.0.0
-  checksum: 8d6db2b64a09828f179ee2d57a7035aed35ce1eb28ae9003e9674e5de596485fdfb2d359b912e03960844683cc7e37517ad7ce893308e72dad218300b3a36c0c
-  languageName: node
-  linkType: hard
-
-"le-store-certbot@npm:^2.2.3":
-  version: 2.2.3
-  resolution: "le-store-certbot@npm:2.2.3"
-  dependencies:
-    "@root/mkdirp": ^1.0.0
-    pyconf: ^1.1.7
-    safe-replace: ^1.1.0
-  checksum: 168da47b68843d60d976fbe3e1577242c8be7433beea8cc5a739c16760a432cf9ae096068e1ecbe7a4df66514827897142141f77d6dd5c383306c668eb59d4c9
   languageName: node
   linkType: hard
 
@@ -5264,13 +5050,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object-hash@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "object-hash@npm:3.0.0"
-  checksum: 80b4904bb3857c52cc1bfd0b52c0352532ca12ed3b8a6ff06a90cd209dfda1b95cee059a7625eb9da29537027f68ac4619363491eedb2f5d3dddbba97494fd6c
-  languageName: node
-  linkType: hard
-
 "object-inspect@npm:^1.12.0, object-inspect@npm:^1.9.0":
   version: 1.12.2
   resolution: "object-inspect@npm:1.12.2"
@@ -5762,15 +5541,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pyconf@npm:^1.1.7":
-  version: 1.1.7
-  resolution: "pyconf@npm:1.1.7"
-  dependencies:
-    safe-replace: ^1.0.2
-  checksum: eab36ef5d40e688e0fce0e5d88960c745ccfa05d6905b7476ac2c7b434b39d988e34790faa4cc4ab8870e2f78b9f2cf00ba4ab753ffe34229e722412ae5e4f9e
-  languageName: node
-  linkType: hard
-
 "qs@npm:6.10.3, qs@npm:^6.9.0":
   version: 6.10.3
   resolution: "qs@npm:6.10.3"
@@ -6118,13 +5888,6 @@ __metadata:
   dependencies:
     regexp-tree: ~0.1.1
   checksum: 5d734e2193c63ef0cb00f60c0244e0f8a30ecb31923633cd34636808d6a7c4c206d650017953ae1db8bc33967c2f06af33488dea6f038f4e38212beb7bed77b4
-  languageName: node
-  linkType: hard
-
-"safe-replace@npm:^1.0.2, safe-replace@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "safe-replace@npm:1.1.0"
-  checksum: de113d8866754abb474c0eac6b4f8f0129f66c5a26f1bbfb337f55eca1ac14e67c5849a573e093864482f85ddb8e1cecf2a9104a751f2bb54769469335211489
   languageName: node
   linkType: hard
 
@@ -7099,13 +6862,6 @@ __metadata:
   version: 2.3.0
   resolution: "v8-compile-cache@npm:2.3.0"
   checksum: adb0a271eaa2297f2f4c536acbfee872d0dd26ec2d76f66921aa7fc437319132773483344207bdbeee169225f4739016d8d2dbf0553913a52bb34da6d0334f8e
-  languageName: node
-  linkType: hard
-
-"valid-url@npm:^1.0.9":
-  version: 1.0.9
-  resolution: "valid-url@npm:1.0.9"
-  checksum: 3ecb030559404441c2cf104cbabab8770efb0f36d117db03d1081052ef133015a68806148ce954bb4dd0b5c42c14b709a88783c93d66b0916cb67ba771c98702
   languageName: node
   linkType: hard
 

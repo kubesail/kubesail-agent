@@ -1,3 +1,0 @@
-[submodule "modules/node-http-proxy"]
-	path = modules/node-http-proxy
-	url = git@github.com:erulabs/node-http-proxy
