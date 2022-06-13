@@ -1,5 +1,5 @@
 {
-  "ignorePatterns": ["node_modules/"],
+  "ignorePatterns": ["node_modules/", "lib/agent/index.js"],
   "parser": "@babel/eslint-parser",
   "extends": ["standard", "plugin:security/recommended", "prettier"],
   "plugins": ["standard", "security", "prettier", "node"],
