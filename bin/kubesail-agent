@@ -2,7 +2,7 @@
 // @flow
 
 require('../lib/shared')
-const KsAgent = require('../lib/agent')
+const KsAgent = require('../lib/agent/Agent')
 
 const ksAgent = new KsAgent()
 
