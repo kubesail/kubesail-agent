@@ -1,6 +1,3 @@
-[submodule "modules/redbird"]
-	path = modules/redbird
-	url = git@github.com:erulabs/redbird
 [submodule "modules/node-http-proxy"]
 	path = modules/node-http-proxy
 	url = git@github.com:erulabs/node-http-proxy
