@@ -1,31 +1,26 @@
 {
-  "parser": "babel-eslint",
-  "extends": [
-    "standard",
-    "plugin:flowtype/recommended",
-    "plugin:security/recommended",
-    "prettier"
-  ],
-  "plugins": ["standard", "flowtype", "security", "prettier"],
+  "ignorePatterns": ["node_modules/"],
+  "parser": "@babel/eslint-parser",
+  "extends": ["standard", "plugin:security/recommended", "prettier"],
+  "plugins": ["standard", "security", "prettier", "node"],
   "parserOptions": {
     "ecmaVersion": 7,
-    "ecmaFeatures": {
-      "modules": true
-    }
+    "requireConfigFile": false
   },
   "rules": {
-    "prettier/prettier": "error",
-    "flowtype/require-valid-file-annotation": 0,
+    "prettier/prettier": "warn",
     "no-console": [
       "warn",
       {
         "allow": ["warn", "error"]
       }
     ],
-    "no-return-assign": 0,
+    // "no-return-assign": 0,
     "require-await": 0,
+    "prefer-regex-literals": 0,
     // "quotes": ["error", "single"],
-    "no-return-await": 0,
+    // "no-return-await": 0,
+    "array-callback-return": 0,
     "no-unreachable": ["warn"],
     "no-use-before-define": "error",
     "no-unused-vars": [
@@ -47,6 +42,7 @@
       {
         "groups": ["builtin", "external", "internal"]
       }
-    ]
+    ],
+    "no-unused-expressions": 0
   }
 }
