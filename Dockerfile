@@ -1,12 +1,14 @@
 # syntax=docker/dockerfile:1.3
 
-FROM node:16-bullseye-slim
+FROM node:18-bullseye-slim
 
 RUN usermod -u 989 node && \
   mkdir -p /home/node/.dbus-keyrings && \
   chown -R node:node /home/node && \
   apt-get -yqq update && \
-  apt-get -yqq install bash curl
+  apt-get -yqq install bash curl && \
+  apt-get clean && \
+  rm -rf /usr/share/postgresql/*/man /var/lib/apt/lists/* /var/log/apt /var/log/dpkg.log /var/log/alternatives.log
 
 USER node
 WORKDIR /home/node/app

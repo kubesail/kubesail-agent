@@ -26,6 +26,7 @@ if [[ $NODE_ENV == "development" ]]; then
   echo "Starting in DEVELOPMENT mode"
   yarn run nodemon \
     --watch lib \
+    --watch modules \
     --ext js,json,yaml,plain \
     -- \
     --require /home/node/app/.pnp.cjs \

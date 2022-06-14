@@ -15,6 +15,7 @@
 !yarn.lock
 !bin
 !lib
+!modules
 !test
 !k8s/overlays/dev/secrets
 
