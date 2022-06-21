@@ -55,8 +55,10 @@ spec:
           ports:
             - name: metrics
               containerPort: 5000
-            - name: http
-              containerPort: 6000
+            - name: web
+              containerPort: 4080
+            - name: websecure
+              containerPort: 4443
           env:
             - name: GET_HOSTS_FROM
               value: dns
