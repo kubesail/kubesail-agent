@@ -1,9 +1,5 @@
-bases:
-  - ../../../gateway
 resources:
   - ./redis.yaml
-  - ./services/metrics.yaml
-patchesStrategicMerge:
   - ./gateway.yaml
 secretGenerator:
   - name: self-signed

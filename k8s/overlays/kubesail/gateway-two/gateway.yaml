@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubesail-gateway
+  name: kubesail-gateway-two
 spec:
   template:
     spec:
@@ -11,6 +11,6 @@ spec:
             - name: KUBESAIL_API_TARGET
               value: api
             - name: GATEWAY_ADDRESS
-              value: dev.k8g8.com
+              value: dev-two.k8g8.com
             - name: REDIS_SERVERS
-              value: kubesail-gateway-redis:6379
+              value: kubesail-gateway-two-redis:6379

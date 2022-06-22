@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubesail-gateway-two-redis
+spec:
+  selector:
+    matchLabels:
+      app: kubesail-gateway-two-redis
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kubesail-gateway-two-redis
+    spec:
+      containers:
+        - name: master
+          image: redis:6.0
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: 50m
+              memory: 100Mi
+            limits:
+              cpu: 2
+              memory: 1500Mi
+          ports:
+            - containerPort: 6379
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubesail-gateway-two-redis
+  labels:
+    app: kubesail-gateway-two-redis
+spec:
+  ports:
+    - port: 6379
+      targetPort: 6379
+  selector:
+    app: kubesail-gateway-two-redis

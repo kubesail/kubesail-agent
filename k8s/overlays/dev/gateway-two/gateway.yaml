@@ -1,0 +1,86 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubesail-gateway-two
+spec:
+  selector:
+    matchLabels:
+      app: kubesail-gateway-two
+      tier: service
+  minReadySeconds: 0
+  strategy:
+    type: Recreate
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        prometheus.io/port: "5000"
+        prometheus.io/scrape: "true"
+      labels:
+        app: kubesail-gateway-two
+        tier: service
+    spec:
+      containers:
+        - name: kubesail-gateway
+          image: kubesail/agent
+          imagePullPolicy: IfNotPresent
+          command: ["/home/node/app/bin/node.sh", "gateway"]
+          ports:
+            - name: metrics
+              containerPort: 5000
+            - name: gateway-agents
+              containerPort: 8001
+            - name: gateway-http
+              containerPort: 8081
+            - name: gateway-https
+              containerPort: 8444
+          env:
+            - name: LOGGING_LABEL
+              value: kubesail-gateway-two
+            - name: NODE_ENV
+              value: development
+            - name: GATEWAY_INTERNAL_ADDRESS
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: LOG_LEVEL
+              value: debug
+            - name: APP_ENV
+              value: dev
+            - name: ALWAYS_VALID_DOMAINS
+              value: test-endpoint.example.com
+            - name: GATEWAY_AGENT_LISTEN_PORT
+              value: "8001"
+            - name: GATEWAY_HTTP_LISTEN_PORT
+              value: "8081"
+            - name: GATEWAY_HTTPS_LISTEN_PORT
+              value: "8444"
+          resources:
+            requests:
+              cpu: 50m
+              memory: 100Mi
+            limits:
+              cpu: "2"
+              memory: 1500Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubesail-gateway-two
+spec:
+  type: NodePort
+  ports:
+    - name: gateway-agents
+      port: 8001
+      protocol: TCP
+      targetPort: gateway-agents
+    - name: gateway-http
+      port: 8081
+      protocol: TCP
+      targetPort: gateway-http
+    - name: gateway-https
+      port: 8444
+      protocol: TCP
+      targetPort: gateway-https
+  selector:
+    app: kubesail-gateway-two
