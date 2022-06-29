@@ -103,7 +103,7 @@ spec:
             defaultMode: 420
             sources:
               - serviceAccountToken:
-                  expirationSeconds: 600
+                  expirationSeconds: 7200
                   path: token
               - configMap:
                   items:

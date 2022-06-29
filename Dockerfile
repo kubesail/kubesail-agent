@@ -3,8 +3,8 @@
 FROM node:18-bullseye-slim
 
 RUN usermod -u 989 node && \
-  mkdir -p /home/node/.dbus-keyrings && \
-  chown -R node:node /home/node && \
+  mkdir -p /home/node/.dbus-keyrings /opt/kubesail && \
+  chown -R node:node /home/node /opt/kubesail && \
   apt-get -yqq update && \
   apt-get -yqq install bash curl && \
   apt-get clean && \
