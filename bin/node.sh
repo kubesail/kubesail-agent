@@ -13,7 +13,7 @@ if [[ "$1" == "agent" ]]; then
       x86_64) architecture="amd64" ;;
       arm)    dpkg --print-architecture | grep -q "arm64" && architecture="arm64" || architecture="arm" ;;
   esac
-  LATEST_FB_VERSION="$(curl --connect-timeout 10 -sL https://raw.githubusercontent.com/kubesail/pibox-framebuffer/main/VERSION.txt)"
+  LATEST_FB_VERSION="$(curl --connect-timeout 10 -L https://raw.githubusercontent.com/kubesail/pibox-framebuffer/main/VERSION.txt)"
   FB_VERSION="v${LATEST_FB_VERSION}"
   FB_PATH=/opt/kubesail/pibox-framebuffer-$FB_VERSION
   if [[ -n $LATEST_FB_VERSION && ! -f $FB_PATH && -d /opt/kubesail ]]; then
