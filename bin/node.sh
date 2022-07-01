@@ -16,7 +16,7 @@ if [[ "$1" == "agent" ]]; then
   LATEST_FB_VERSION="$(curl --connect-timeout 10 -sL https://raw.githubusercontent.com/kubesail/pibox-framebuffer/main/VERSION.txt)"
   FB_VERSION="v${LATEST_FB_VERSION}"
   FB_PATH=/opt/kubesail/pibox-framebuffer-$FB_VERSION
-  if [[ ! -f $FB_PATH && -d /opt/kubesail ]]; then
+  if [[ -n $LATEST_FB_VERSION && ! -f $FB_PATH && -d /opt/kubesail ]]; then
     echo "Installing FrameBuffer service ${FB_VERSION}"
     curl --connect-timeout 3 -sLo $FB_PATH https://github.com/kubesail/pibox-framebuffer/releases/download/$FB_VERSION/pibox-framebuffer-linux-${architecture}-$FB_VERSION
     chmod +x $FB_PATH
