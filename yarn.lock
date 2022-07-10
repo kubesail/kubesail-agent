@@ -1942,9 +1942,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dbus-next@https://github.com/erulabs/node-dbus-next#cb05e5ae193a14d36e05b569dbb612d8bc941cef":
+"dbus-next@erulabs/node-dbus-next#cb05e5ae193a14d36e05b569dbb612d8bc941cef":
   version: 0.10.2
-  resolution: "dbus-next@git+ssh://git@github.com/erulabs/node-dbus-next.git#commit=cb05e5ae193a14d36e05b569dbb612d8bc941cef"
+  resolution: "dbus-next@https://github.com/erulabs/node-dbus-next.git#commit=cb05e5ae193a14d36e05b569dbb612d8bc941cef"
   dependencies:
     "@nornagon/put": 0.0.8
     event-stream: 3.3.4
@@ -4375,7 +4375,7 @@ __metadata:
     chai: ^4.3.6
     cidr-matcher: ^2.1.1
     connect-timeout: ^1.9.0
-    dbus-next: "https://github.com/erulabs/node-dbus-next#cb05e5ae193a14d36e05b569dbb612d8bc941cef"
+    dbus-next: "erulabs/node-dbus-next#cb05e5ae193a14d36e05b569dbb612d8bc941cef"
     eslint: ^8.17.0
     eslint-config-prettier: ^8.5.0
     eslint-config-standard: ^17.0.0
