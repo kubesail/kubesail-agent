@@ -50,6 +50,7 @@
     "http2-proxy": "^5.0.53",
     "http2-wrapper": "^2.1.11",
     "ioredis": "^5.0.3",
+    "ipaddr.js": "^2.0.1",
     "isbot": "^3.5.0",
     "kubernetes-client": "kubesail/kubernetes-client#461d6968844542ba2738dbd9acdc4884a6aa02b8",
     "lodash": "^4.17.21",

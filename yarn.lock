@@ -3732,6 +3732,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ipaddr.js@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "ipaddr.js@npm:2.0.1"
+  checksum: dd194a394a843d470f88d17191b0948f383ed1c8e320813f850c336a0fcb5e9215d97ec26ca35ab4fbbd31392c8b3467f3e8344628029ed3710b2ff6b5d1034e
+  languageName: node
+  linkType: hard
+
 "is-arrayish@npm:^0.3.1":
   version: 0.3.2
   resolution: "is-arrayish@npm:0.3.2"
@@ -4237,6 +4244,7 @@ __metadata:
     http2-proxy: ^5.0.53
     http2-wrapper: ^2.1.11
     ioredis: ^5.0.3
+    ipaddr.js: ^2.0.1
     isbot: ^3.5.0
     kubernetes-client: "kubesail/kubernetes-client#461d6968844542ba2738dbd9acdc4884a6aa02b8"
     lodash: ^4.17.21
