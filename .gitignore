@@ -30,6 +30,7 @@ terraform.tfstate.*
 *.crt
 *.key
 *.csr
+*.vdi
 .pnp.cjs
 .yarn/*
 !.yarn/releases

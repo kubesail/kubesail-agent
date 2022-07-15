@@ -23,4 +23,4 @@ command -v buildx > /dev/null && BUILDX_PREFIX="buildx"
 set -e
 ./bin/install.sh
 
-${BUILDX_PREFIX} build --pull --platform linux/amd64,linux/arm64,linux/arm/v7 -t ${TAG} --push .
+DOCKER_BUILDKIT=1 ${BUILDX_PREFIX} build --pull --platform linux/amd64,linux/arm64 -t ${TAG} --push .
