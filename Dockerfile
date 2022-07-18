@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.3
 
-FROM node:18-bullseye-slim
+FROM node:16-bullseye-slim
 
 RUN usermod -u 989 node && \
   mkdir -p /home/node/.dbus-keyrings /opt/kubesail && \
