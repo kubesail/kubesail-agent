@@ -6,6 +6,9 @@
 !.yarn/releases
 !.yarn/plugins
 !.yarn/versions
+!.yarn/sdks
+!.yarn/unplugged
+!.yarn/install-state.gz
 
 # include workspace
 !.yarnrc.yml

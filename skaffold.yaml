@@ -10,6 +10,14 @@ build:
             dest: .
           - src: test/**/*
             dest: .
+    - image: kubesail/gateway
+      context: .
+      sync:
+        manual:
+          - src: lib/**/*
+            dest: .
+          - src: test/**/*
+            dest: .
       docker:
         dockerfile: Dockerfile
 deploy:

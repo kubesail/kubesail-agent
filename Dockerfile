@@ -6,9 +6,15 @@ RUN usermod -u 989 node && \
   mkdir -p /home/node/.dbus-keyrings /opt/kubesail && \
   chown -R node:node /home/node /opt/kubesail && \
   apt-get -yqq update && \
-  apt-get -yqq install bash curl && \
+  apt-get -yqq install bash curl ca-certificates && \
   apt-get clean && \
-  rm -rf /usr/share/postgresql/*/man /var/lib/apt/lists/* /var/log/apt /var/log/dpkg.log /var/log/alternatives.log
+  rm -rf /usr/share/postgresql/*/man /var/lib/apt/lists/* /var/log/apt /var/log/dpkg.log /var/log/alternatives.log && \
+  curl -sL https://letsencrypt.org/certs/isrg-root-x1-cross-signed.pem -o /usr/local/share/ca-certificates/isrg-root-x1-cross-signed.crt && \
+  curl -sL https://letsencrypt.org/certs/isrg-root-x2-cross-signed.pem -o /usr/local/share/ca-certificates/isrg-root-x2-cross-signed.crt && \
+  curl -sL https://letsencrypt.org/certs/lets-encrypt-e1.pem -o /usr/local/share/ca-certificates/lets-encrypt-e1.crt && \
+  curl -sL https://letsencrypt.org/certs/lets-encrypt-r3.pem -o /usr/local/share/ca-certificates/lets-encrypt-r3.crt && \
+  curl -sL https://letsencrypt.org/certs/trustid-x3-root.pem.txt -o /usr/local/share/ca-certificates/trustid-x3-root.crt && \
+  update-ca-certificates
 
 USER node
 WORKDIR /home/node/app

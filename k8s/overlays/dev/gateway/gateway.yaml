@@ -19,7 +19,7 @@ spec:
         #     - name: NODE_ENV
         #       value: development
         - name: kubesail-gateway
-          image: kubesail/agent
+          image: kubesail/gateway
           imagePullPolicy: IfNotPresent
           ports:
             - name: inspector

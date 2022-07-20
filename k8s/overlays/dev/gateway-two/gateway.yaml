@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: kubesail-gateway
-          image: kubesail/agent
+          image: kubesail/gateway
           imagePullPolicy: IfNotPresent
           command: ["/home/node/app/bin/node.sh", "gateway"]
           ports:
