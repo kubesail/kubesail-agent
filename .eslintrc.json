@@ -23,6 +23,7 @@
     "array-callback-return": 0,
     "no-unreachable": ["warn"],
     "no-use-before-define": "error",
+    "dot-notation": 0,
     "no-unused-vars": [
       1,
       {
