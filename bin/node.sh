@@ -18,14 +18,19 @@ if [[ "$1" == "agent" ]]; then
   FB_VERSION="v${LATEST_FB_VERSION}"
   FB_PATH=/opt/kubesail/pibox-framebuffer-$FB_VERSION
   if [[ -n $LATEST_FB_VERSION && ! -f $FB_PATH && -d /opt/kubesail ]]; then
-    echo "Installing FrameBuffer service ${FB_VERSION}"
-    curl --connect-timeout 3 -sLo $FB_PATH https://github.com/kubesail/pibox-framebuffer/releases/download/$FB_VERSION/pibox-framebuffer-linux-${architecture}-$FB_VERSION
-    chmod +x $FB_PATH
-    rm -fv /opt/kubesail/pibox-framebuffer
-    ln -sv $FB_PATH /opt/kubesail/pibox-framebuffer
-    curl --unix-socket /var/run/pibox/framebuffer.sock "http://localhost/exit"
+    FB_URL="https://github.com/kubesail/pibox-framebuffer/releases/download/$FB_VERSION/pibox-framebuffer-linux-${architecture}-$FB_VERSION"
+    echo "Installing FrameBuffer service ${FB_VERSION} from ${FB_URL}"
+    curl --connect-timeout 10 -Lo "$FB_PATH" "$FB_URL"
+    if [[ -f $FB_PATH ]]; then
+      chmod +x "$FB_PATH"
+      rm -fv /opt/kubesail/pibox-framebuffer
+      ln -sv $FB_PATH /opt/kubesail/pibox-framebuffer
+      curl -s --unix-socket /var/run/pibox/framebuffer.sock "http://localhost/exit"
+    else
+      echo "Failed to install pibox-framebuffer service"
+    fi
   fi
-  curl --connect-timeout 3 -sLo /opt/kubesail/kubesail-support.sh https://raw.githubusercontent.com/kubesail/pibox-os/main/kubesail-support.sh
+  curl --connect-timeout 10 -sLo /opt/kubesail/kubesail-support.sh https://raw.githubusercontent.com/kubesail/pibox-os/main/kubesail-support.sh
   chmod +x /opt/kubesail/kubesail-support.sh
 fi
 
