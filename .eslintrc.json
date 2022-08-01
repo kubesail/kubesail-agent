@@ -24,6 +24,7 @@
     "no-unreachable": ["warn"],
     "no-use-before-define": "error",
     "dot-notation": 0,
+    "new-cap": 0,
     "no-unused-vars": [
       1,
       {
