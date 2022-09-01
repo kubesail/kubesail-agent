@@ -10,7 +10,7 @@ spec:
           env:
             - name: KUBESAIL_API_TARGET
               value: api
-            - name: GATEWAY_ADDRESS
-              value: dev.k8g8.com
+            - name: GATEWAY_ADDRESSES
+              value: dev.k8g8.com,dev.kubegateway.com
             - name: REDIS_SERVERS
               value: kubesail-gateway-redis:6379
