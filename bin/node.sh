@@ -16,6 +16,8 @@ if [[ "$1" == "agent" ]]; then
   if [[ -d /opt/kubesail ]]; then
     curl --connect-timeout 10 -Lo /opt/kubesail/provision-disk.sh https://raw.githubusercontent.com/kubesail/pibox-os/main/provision-disk.sh
     chmod +x /opt/kubesail/provision-disk.sh
+    curl --connect-timeout 10 -sLo /opt/kubesail/kubesail-support.sh https://raw.githubusercontent.com/kubesail/pibox-os/main/kubesail-support.sh
+    chmod +x /opt/kubesail/kubesail-support.sh
   fi
   # LATEST_FB_VERSION="$(curl --connect-timeout 10 -L https://raw.githubusercontent.com/kubesail/pibox-framebuffer/main/VERSION.txt)"
   LATEST_FB_VERSION="20"
@@ -34,8 +36,6 @@ if [[ "$1" == "agent" ]]; then
       echo "Failed to install pibox-framebuffer service"
     fi
   fi
-  curl --connect-timeout 10 -sLo /opt/kubesail/kubesail-support.sh https://raw.githubusercontent.com/kubesail/pibox-os/main/kubesail-support.sh
-  chmod +x /opt/kubesail/kubesail-support.sh
 fi
 
 shift
