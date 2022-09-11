@@ -14,9 +14,11 @@ if [[ "$1" == "agent" ]]; then
       arm)    dpkg --print-architecture | grep -q "arm64" && architecture="arm64" || architecture="arm" ;;
   esac
   if [[ -d /opt/kubesail ]]; then
+    echo "Updating provision-disk.sh"
     curl --connect-timeout 10 -Lo /opt/kubesail/provision-disk.sh https://raw.githubusercontent.com/kubesail/pibox-os/main/provision-disk.sh
     chmod +x /opt/kubesail/provision-disk.sh
-    curl --connect-timeout 10 -sLo /opt/kubesail/kubesail-support.sh https://raw.githubusercontent.com/kubesail/pibox-os/main/kubesail-support.sh
+    echo "Updating kubesail-support.sh"
+    curl --connect-timeout 10 -Lo /opt/kubesail/kubesail-support.sh https://raw.githubusercontent.com/kubesail/pibox-os/main/kubesail-support.sh
     chmod +x /opt/kubesail/kubesail-support.sh
   fi
   # LATEST_FB_VERSION="$(curl --connect-timeout 10 -L https://raw.githubusercontent.com/kubesail/pibox-framebuffer/main/VERSION.txt)"
