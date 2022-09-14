@@ -42,9 +42,6 @@ spec:
             requests:
               cpu: 50m
               memory: 100Mi
-            limits:
-              cpu: "2"
-              memory: 1500Mi
       volumes:
         - name: self-signed
           secret:

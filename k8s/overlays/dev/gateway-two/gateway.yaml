@@ -55,13 +55,12 @@ spec:
               value: "8081"
             - name: GATEWAY_HTTPS_LISTEN_PORT
               value: "8444"
+            # - name: ALLOWED_GATEWAY_ADDRESSES
+            #   value: ""
           resources:
             requests:
               cpu: 50m
               memory: 100Mi
-            limits:
-              cpu: "2"
-              memory: 1500Mi
 ---
 apiVersion: v1
 kind: Service

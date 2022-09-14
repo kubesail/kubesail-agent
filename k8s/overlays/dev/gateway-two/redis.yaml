@@ -20,9 +20,6 @@ spec:
             requests:
               cpu: 50m
               memory: 100Mi
-            limits:
-              cpu: 2
-              memory: 1500Mi
           ports:
             - containerPort: 6379
 ---
