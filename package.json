@@ -40,6 +40,7 @@
     "@sap_oss/node-socketio-stream": "^1.0.3",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
+    "bufferutil": "^4.0.7",
     "cidr-matcher": "^2.1.1",
     "connect-timeout": "^1.9.0",
     "dbus-next": "erulabs/node-dbus-next#cb05e5ae193a14d36e05b569dbb612d8bc941cef",
@@ -67,6 +68,7 @@
     "socket.io-client": "2.5.0",
     "socket.io-stream": "^0.9.1",
     "spdy": "^4.0.2",
+    "utf-8-validate": "^5.0.10",
     "validator": "^13.7.0",
     "winston": "^3.7.2"
   },

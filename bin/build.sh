@@ -21,6 +21,6 @@ BUILDX_PREFIX="docker buildx"
 command -v buildx > /dev/null && BUILDX_PREFIX="buildx"
 
 set -e
-./bin/install.sh
+# ./bin/install.sh
 
 DOCKER_BUILDKIT=1 ${BUILDX_PREFIX} build --pull --platform linux/amd64,linux/arm64 -t ${TAG} --push .

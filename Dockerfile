@@ -1,12 +1,12 @@
 # syntax=docker/dockerfile:1.3
 
-FROM node:16-bullseye-slim
+FROM node:18-bullseye-slim
 
 RUN usermod -u 989 node && \
   mkdir -p /home/node/.dbus-keyrings /opt/kubesail && \
   chown -R node:node /home/node /opt/kubesail && \
   apt-get -yqq update && \
-  apt-get -yqq install bash curl ca-certificates && \
+  apt-get -yqq install bash curl ca-certificates apt-utils nscd && \
   apt-get clean && \
   rm -rf /usr/share/postgresql/*/man /var/lib/apt/lists/* /var/log/apt /var/log/dpkg.log /var/log/alternatives.log && \
   curl -sL https://letsencrypt.org/certs/isrg-root-x1-cross-signed.pem -o /usr/local/share/ca-certificates/isrg-root-x1-cross-signed.crt && \

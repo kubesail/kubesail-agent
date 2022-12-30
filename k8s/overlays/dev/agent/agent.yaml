@@ -33,6 +33,8 @@ spec:
               value: blackhole+locallocallocallocallocallocallo@kubesail.com
             - name: APP_ENV
               value: dev
+            - name: KUBESAIL_WWW_TARGET
+              value: https://localhost:3000
             - name: KUBESAIL_AGENT_INITIAL_ID
               value: "a dev cluster"
           envFrom:
