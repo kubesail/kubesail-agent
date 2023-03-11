@@ -59,5 +59,6 @@ else
     --stack_size=1200 \
     --max_semi_space_size=64 \
     --max-old-space-size=1500 \
+    --inspect=9229 \
     ${APP_PATH} $@
 fi
