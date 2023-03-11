@@ -54,8 +54,10 @@ if [[ $NODE_ENV == "development" ]]; then
     --stack_size=1200 \
     ${APP_PATH} $@
 else
-  node \
+  UV_THREADPOOL_SIZE=8 node \
     --require /home/node/app/.pnp.cjs \
     --stack_size=1200 \
+    --max_semi_space_size=64 \
+    --max-old-space-size=1500 \
     ${APP_PATH} $@
 fi
