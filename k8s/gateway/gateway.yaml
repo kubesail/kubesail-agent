@@ -71,5 +71,9 @@ spec:
       port: 8443
       protocol: TCP
       targetPort: gateway-https
+    - name: inspector
+      port: 9229
+      protocol: TCP
+      targetPort: inspector
   selector:
     app: kubesail-gateway

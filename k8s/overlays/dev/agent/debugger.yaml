@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubesail-agent
+spec:
+  ports:
+    - name: inspector
+      port: 9229
+      protocol: TCP
+      targetPort: inspector
+  selector:
+    app: kubesail-agent

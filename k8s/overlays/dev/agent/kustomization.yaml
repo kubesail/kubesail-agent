@@ -2,6 +2,8 @@ bases:
   - ../../../agent
 patchesStrategicMerge:
   - ./agent.yaml
+resources:
+  - ./debugger.yaml
 secretGenerator:
   - name: kubesail-agent
     envs:
