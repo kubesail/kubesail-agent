@@ -56,7 +56,7 @@
     "isbot": "^3.5.0",
     "kubernetes-client": "kubesail/kubernetes-client#461d6968844542ba2738dbd9acdc4884a6aa02b8",
     "lodash": "^4.17.21",
-    "lru-cache": "^7.7.3",
+    "lru-cache": "^8.0.3",
     "morgan": "^1.10.0",
     "nanoid": "^3.3.2",
     "node-fetch": "2",

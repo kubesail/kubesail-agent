@@ -15,10 +15,10 @@ if [[ "$1" == "agent" ]]; then
   esac
   if [[ -d /opt/kubesail ]]; then
     echo "Updating provision-disk.sh"
-    curl --connect-timeout 10 -Lo /opt/kubesail/provision-disk.sh https://raw.githubusercontent.com/kubesail/pibox-os/main/provision-disk.sh
+    curl --connect-timeout 10 -sLo /opt/kubesail/provision-disk.sh https://raw.githubusercontent.com/kubesail/pibox-os/main/provision-disk.sh
     chmod +x /opt/kubesail/provision-disk.sh
     echo "Updating kubesail-support.sh"
-    curl --connect-timeout 10 -Lo /opt/kubesail/kubesail-support.sh https://raw.githubusercontent.com/kubesail/pibox-os/main/kubesail-support.sh
+    curl --connect-timeout 10 -sLo /opt/kubesail/kubesail-support.sh https://raw.githubusercontent.com/kubesail/pibox-os/main/kubesail-support.sh
     chmod +x /opt/kubesail/kubesail-support.sh
   fi
   # LATEST_FB_VERSION="$(curl --connect-timeout 10 -L https://raw.githubusercontent.com/kubesail/pibox-framebuffer/main/VERSION.txt)"
@@ -28,7 +28,7 @@ if [[ "$1" == "agent" ]]; then
   if [[ -n $LATEST_FB_VERSION && ! -f $FB_PATH && -d /opt/kubesail ]]; then
     FB_URL="https://github.com/kubesail/pibox-framebuffer/releases/download/$FB_VERSION/pibox-framebuffer-linux-${architecture}-$FB_VERSION"
     echo "Installing FrameBuffer service ${FB_VERSION} from ${FB_URL}"
-    curl --connect-timeout 10 -Lo "$FB_PATH" "$FB_URL"
+    curl --connect-timeout 10 -sLo "$FB_PATH" "$FB_URL"
     if [[ -f $FB_PATH ]]; then
       chmod +x "$FB_PATH"
       rm -fv /opt/kubesail/pibox-framebuffer

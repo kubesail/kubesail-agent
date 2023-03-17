@@ -4335,7 +4335,7 @@ __metadata:
     isbot: ^3.5.0
     kubernetes-client: "kubesail/kubernetes-client#461d6968844542ba2738dbd9acdc4884a6aa02b8"
     lodash: ^4.17.21
-    lru-cache: ^7.7.3
+    lru-cache: ^8.0.3
     mocha: ^9.2.2
     morgan: ^1.10.0
     nanoid: ^3.3.2
@@ -4495,10 +4495,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:^7.7.1, lru-cache@npm:^7.7.3":
+"lru-cache@npm:^7.7.1":
   version: 7.12.0
   resolution: "lru-cache@npm:7.12.0"
   checksum: fdb62262978393df7a4bd46a072bc5c3808c50ca5a347a82bb9459410efd841b7bae50655c3cf9004c70d12c756cf6d018f6bff155a16cdde9eba9a82899b5eb
+  languageName: node
+  linkType: hard
+
+"lru-cache@npm:^8.0.3":
+  version: 8.0.3
+  resolution: "lru-cache@npm:8.0.3"
+  checksum: 943a7c809d35343f6a38007e1626d0a39eedcd7fc18a405a78f9e54aeadc785316f9de45da9116bd679c22ed14b6df9da519eab309b952eb28870b9dea29efc3
   languageName: node
   linkType: hard
 
