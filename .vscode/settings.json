@@ -4,6 +4,7 @@
     "**/.pnp.*": true
   },
   "eslint.nodePath": ".yarn/sdks",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
   "cSpell.words": [
     "isbot"
   ]
