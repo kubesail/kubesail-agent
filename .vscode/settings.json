@@ -4,7 +4,6 @@
     "**/.pnp.*": true
   },
   "eslint.nodePath": ".yarn/sdks",
-  "prettier.prettierPath": "/Users/eru/code/kubesail.com/www/node_modules/prettier",
   "cSpell.words": [
     "isbot"
   ]
