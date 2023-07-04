@@ -52,13 +52,15 @@ if [[ $NODE_ENV == "development" ]]; then
     --require /home/node/app/.pnp.cjs \
     --inspect=0.0.0.0:9229 \
     --stack_size=1200 \
+    --max_semi_space_size=128 \
+    --max-old-space-size=400 \
     ${APP_PATH} $@
 else
   UV_THREADPOOL_SIZE=6 node \
     --require /home/node/app/.pnp.cjs \
     --stack_size=1200 \
     --max_semi_space_size=128 \
-    --max-old-space-size=2000 \
+    --max-old-space-size=400 \
     --inspect=9229 \
     ${APP_PATH} $@
 fi

@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.3
 
-FROM node:18-bullseye-slim AS base
+FROM node:20-bullseye-slim AS base
 RUN apt-get -yqq update && \
   apt-get -yqq install bash curl apt-utils python3 build-essential
 WORKDIR /home/node/app
@@ -10,7 +10,7 @@ RUN yarn config set enableNetwork false && \
   yarn install --immutable --immutable-cache
 
 
-FROM node:18-bullseye-slim AS runner
+FROM node:20-bullseye-slim AS runner
 
 RUN usermod -u 989 node && \
   mkdir -p /home/node/.dbus-keyrings /opt/kubesail && \
