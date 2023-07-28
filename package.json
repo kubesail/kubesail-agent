@@ -37,6 +37,7 @@
     "prettier": "^2.8.8"
   },
   "dependencies": {
+    "@fails-components/webtransport": "^0.2.2",
     "@sap_oss/node-socketio-stream": "^1.0.3",
     "axios": "^1.4.0",
     "bcryptjs": "^2.4.3",
@@ -70,7 +71,7 @@
     "socket.io-msgpack-parser": "^3.0.2",
     "socket.io-stream": "^0.9.1",
     "spdy": "^4.0.2",
-    "utf-8-validate": "^5.0.10",
+    "utf-8-validate": "^6.0.3",
     "validator": "^13.9.0",
     "winston": "^3.9.0"
   },

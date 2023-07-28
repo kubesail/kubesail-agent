@@ -2,12 +2,12 @@
 
 FROM node:20-bullseye-slim AS base
 RUN apt-get -yqq update && \
-  apt-get -yqq install bash curl apt-utils python3 build-essential
+  apt-get -yqq install bash curl apt-utils python3 build-essential git
 WORKDIR /home/node/app
 COPY --chown=node:node .yarn ./.yarn
 COPY --chown=node:node .pnp.cjs .pnp.loader.mjs package.json yarn.lock .yarnrc.yml ./
 RUN yarn config set enableNetwork false && \
-  yarn install --immutable --immutable-cache
+  yarn install --immutable --immutable-cache || bash -c "cat /tmp/*/build.log && exit 1"
 
 
 FROM node:20-bullseye-slim AS runner
