@@ -20,7 +20,8 @@ spec:
         - name: test-endpoint
           image: kubesail/agent
           imagePullPolicy: IfNotPresent
-          command: ["yarn", "run", "nodemon", "lib/test-endpoint"]
+          command: ["yarn"]
+          args: ["run", "nodemon", "lib/test-endpoint"]
           ports:
             - name: http
               containerPort: 8000
