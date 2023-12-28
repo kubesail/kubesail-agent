@@ -1,5 +1,5 @@
 const dbus = require('dbus-next')
-const toASCII = require('punycode').toASCII
+const toASCII = require('punycode/').toASCII
 
 async function test() {
   const systemBus = dbus.systemBus()

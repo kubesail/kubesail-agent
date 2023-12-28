@@ -15,6 +15,9 @@
   "scripts": {
     "deploy": "./bin/build.sh"
   },
+  "engines": {
+    "node": ">=21.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.23.6",
     "@babel/eslint-parser": "^7.23.3",

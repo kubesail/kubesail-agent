@@ -11,7 +11,6 @@ RUN yarn config set enableNetwork false && \
 
 
 FROM node:21-bullseye-slim AS runner
-
 RUN usermod -u 989 node && \
   mkdir -p /home/node/.dbus-keyrings /opt/kubesail && \
   chown -R node:node /home/node /opt/kubesail && \
