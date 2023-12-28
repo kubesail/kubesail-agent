@@ -5,6 +5,8 @@
   },
   "eslint.nodePath": ".yarn/sdks",
   "cSpell.words": [
-    "isbot"
+    "dbus",
+    "isbot",
+    "socketio"
   ]
 }

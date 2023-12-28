@@ -18,6 +18,7 @@
       }
     ],
     "security/detect-non-literal-fs-filename": 0,
-    "security/detect-object-injection": 0
+    "security/detect-object-injection": 0,
+    "node/no-unpublished-require": 0
   }
 }
