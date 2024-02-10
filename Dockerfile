@@ -4,6 +4,7 @@ FROM node:21-bullseye-slim AS base
 RUN apt-get -yqq update && \
   apt-get -yqq install bash curl apt-utils python3 build-essential git procps
 WORKDIR /home/node/app
+ENV NODE_ENV="production"
 COPY --chown=node:node .yarn ./.yarn
 COPY --chown=node:node .pnp.cjs .pnp.loader.mjs package.json yarn.lock .yarnrc.yml ./
 RUN yarn config set enableNetwork false && \
